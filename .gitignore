@@ -1,0 +1,21 @@
+# Bilddaten liegen im gemeinsamen Cloud-Ordner, nicht im Repo
+daten/originale/
+daten/split/
+daten/logo/
+daten/aussortiert/
+*.jpg
+*.jpeg
+*.png
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / System
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
