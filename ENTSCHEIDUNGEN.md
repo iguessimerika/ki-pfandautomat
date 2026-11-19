@@ -1,6 +1,6 @@
 # Entscheidungen
 
-Was hier steht, gilt für alle. Grundlage: Lastenheft v1.0 (12.11.2026) und Drehbuch zur Bilderstellung (18.11.2026). Neue Einträge nur nach Bestätigung durch ein Teammitglied, mit Datum und Namen.
+Was hier steht, gilt für alle. Grundlage: Lastenheft v1.0 (12.11.2026) und Drehbuch zur Bilderstellung (18.11.2026), beide im Ordner `doku/`. Neue Einträge nur nach Bestätigung durch ein Teammitglied, mit Datum und Namen.
 
 ## Klassen (Hauptmodell)
 

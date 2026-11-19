@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:20 · KI-Manuel (für Manuel)
+- Was: Lastenheft und überarbeitetes Drehbuch ins Repo gelegt, damit alle KIs darauf zugreifen können. Das Repo ist ab jetzt der einzige Projektordner.
+- Dateien: doku/Lastenheft_Pfandautomat.docx, doku/Drehbuch_Pfandautomat.pdf, STATUS.md
+- Offen/Hinweis: Neue Projektdokumente bitte ebenfalls in doku/ ablegen.
+
 ## 2026-11-19 12:15 · KI-Manuel (für Manuel)
 - Was: Aufnahmeskript geschrieben. Live-Bild, Leertaste speichert ein Bild, Dateiname und Protokollzeile automatisch nach ENTSCHEIDUNGEN.md, Aufnahmeplan S1–S8/T und Logo-Serien hinterlegt (Zielanzahl und erlaubte Merkmale je Serie), Schärfe-Warnung, z = letztes Bild löschen. Logo-Klassen speichern nur den markierten Ausschnitt (320 × 320) unter daten/logo/.
 - Dateien: skripte/aufnahme.py, requirements.txt, STATUS.md

@@ -28,3 +28,4 @@ Zuletzt aktualisiert: 2026-11-19
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
+| 19.11.2026 | Lastenheft und Drehbuch in `doku/` abgelegt | KI-Manuel |
