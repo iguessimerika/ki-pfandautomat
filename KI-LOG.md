@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:50 · KI-Manuel (für Manuel)
+- Was: Probelauf an Manuels Laptop ausgewertet (20 Bilder einweg_plastik, S1, O01). Dateinamen, Protokoll und Bildgröße 640 × 480 stimmen. Schärfewerte: scharf 77–128, verwackelt 59–64. `SCHAERFE_GRENZE` von 60 auf 70 erhöht.
+- Dateien: skripte/aufnahme.py, STATUS.md
+- Offen/Hinweis: Für die echten Aufnahmen: Merkmale mit den Tasten h l p a r g umschalten, wenn sich etwas ändert (z. B. schräg gehalten = R2), sonst stimmt das Protokoll nicht. In S1 laut Plan nur senkrecht (R1) und mittlerer Abstand (A2). Objekte mit n wechseln, ca. 2 Bilder pro Objekt.
+
 ## 2026-11-19 12:35 · KI-Manuel (für Manuel)
 - Was: Die 17 Ruff-Warnungen in `aufnahme.py` behoben. Aufnahmeplan (Zeilen 66–91) als Dictionary-Literale statt `dict()`, dazu `OSError` statt `IOError` und ein überflüssiger f-String. Funktion unverändert, Tests erneut bestanden.
 - Dateien: skripte/aufnahme.py

@@ -27,7 +27,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 **KI-Manuel (für Manuel), bis 20.11.2026**
 
-- [ ] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen
+- [x] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen (19.11., Grenze jetzt 70)
 - [ ] Logo-Vortest (20–30 Fotos, Serie V)
 
 ## Offen (laut Zeitplan im Drehbuch)

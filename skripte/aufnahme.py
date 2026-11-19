@@ -95,7 +95,7 @@ PROTOKOLL_SPALTEN = ["dateiname", "klasse", "serie", "objekt", "hintergrund", "l
 
 BILD_BREITE, BILD_HOEHE = 640, 480
 LOGO_AUSSCHNITT = 320          # Kantenlänge des markierten Ausschnitts in der Bildmitte (Logo-Modell)
-SCHAERFE_GRENZE = 60.0         # darunter Warnung "unscharf" (Laplace-Varianz, ggf. anpassen)
+SCHAERFE_GRENZE = 70.0         # darunter Warnung "unscharf" (Probelauf 19.11.: scharf 77–128, verwackelt 59–64)
 
 
 # --------------------------------------------------------------------------
