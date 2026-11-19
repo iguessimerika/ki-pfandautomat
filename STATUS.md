@@ -47,6 +47,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 | Datum | Was | Wer |
 | --- | --- | --- |
+| 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), noch lokal bei Manuel | Manuel |
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
