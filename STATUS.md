@@ -20,14 +20,14 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 **KI-Erika (für Erika), bis 20.11.2026**
 
-- [ ] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
-- [ ] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
+- [x] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
+- [x] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
 - [ ] Probelauf an Erikas Laptop begleiten: `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER`, ca. 5 Bilder pro Klasse. Ergebnis ins KI-LOG, Probebilder danach löschen.
 - [ ] Danach (bis 01.12.2026): `skripte/aufteilung.py` planen, siehe Drehbuch Abschnitt 5 (Validierung nicht zufällig, sondern pro Serie die Bilder eines Objekts, das in dieser Serie nicht im Training liegt).
 
 **KI-Manuel (für Manuel), bis 20.11.2026**
 
-- [ ] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen
+- [x] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen (19.11., Grenze jetzt 70)
 - [ ] Logo-Vortest (20–30 Fotos, Serie V)
 
 ## Offen (laut Zeitplan im Drehbuch)
@@ -53,3 +53,5 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | 19.11.2026 | Lastenheft v1.0 und Drehbuch v1.0 als PDF unter `dokumente/` abgelegt | KI-Katha |
 | 19.11.2026 | `daten/objektliste.csv` als Gerüst angelegt (72 Zeilen, Beschreibungen noch leer) | KI-Katha |
 | 19.11.2026 | `daten/objektliste.csv` mit geplanten Gegenständen gefüllt (gängige Produkte in Deutschland, noch nicht gesammelt) | KI-Katha |
+| 19.11.2026 | Katharina, Sita und Manuel als Collaborators im Repo eingeladen | Erika |
+| 19.11.2026 | Cloud-Ordner `ki-pfandautomat-bilder` (OneDrive) angelegt, freigegeben und in `ENTSCHEIDUNGEN.md` eingetragen | Erika, KI-Erika |
