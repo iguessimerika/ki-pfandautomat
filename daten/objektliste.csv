@@ -1,0 +1,73 @@
+objekt,klasse,beschreibung,nur_test
+O01,dose,"Coca-Cola 0,33 l, rot",nein
+O02,dose,"Coca-Cola Zero 0,33 l, schwarz",nein
+O03,dose,"Red Bull 0,25 l, blau-silber",nein
+O04,dose,"Monster Energy 0,5 l, schwarz-grün",nein
+O05,dose,"Fanta Orange 0,33 l, orange",nein
+O06,dose,"Sprite 0,33 l, grün",nein
+O07,dose,"Lipton Ice Tea Pfirsich 0,33 l, gelb-orange",nein
+O08,dose,"Bierdose Pils 0,5 l (z. B. Oettinger), weiß-silber",nein
+O09,dose,"Discounter-Energy-Drink 0,25 l (z. B. Lidl/Aldi), silber",nein
+O10,dose,"Mezzo Mix 0,33 l, orange-weiß",nein
+O11,dose,"Pepsi 0,33 l, blau",ja
+O12,dose,"Bierdose Pils 0,5 l anderer Marke (z. B. Krombacher), silber-grün",ja
+O01,einweg_plastik,"Discounter-Mineralwasser still 1,5 l (z. B. Saskia), mit Deckel",nein
+O02,einweg_plastik,"Discounter-Mineralwasser medium 1,5 l, mit Deckel",nein
+O03,einweg_plastik,"Coca-Cola 0,5 l PET, rotes Etikett",nein
+O04,einweg_plastik,"Lipton Ice Tea Pfirsich 1,5 l PET",nein
+O05,einweg_plastik,"Volvic 0,5 l PET",nein
+O06,einweg_plastik,"Discounter-Orangensaft 1,0 l PET",nein
+O07,einweg_plastik,"Discounter-Eistee Zitrone 1,5 l PET, gelb",nein
+O08,einweg_plastik,"Sprite 0,5 l PET, grün transparent",nein
+O09,einweg_plastik,"Müllermilch Schoko 0,4 l PET, braun",nein
+O10,einweg_plastik,"Discounter-Wasser 0,5 l ohne Deckel, leicht eingedrückt",nein
+O11,einweg_plastik,"Pepsi 1,5 l PET, blaues Etikett",ja
+O12,einweg_plastik,"Discounter-Apfelschorle 1,5 l PET",ja
+O01,bierflasche,"Augustiner Helles 0,5 l, Euroflasche braun",nein
+O02,bierflasche,"Tegernseer Hell 0,5 l, Euroflasche braun",nein
+O03,bierflasche,"Paulaner Hefe-Weißbier 0,5 l, braun",nein
+O04,bierflasche,"Erdinger Weißbier 0,5 l, braun",nein
+O05,bierflasche,"Oettinger Pils 0,5 l, braun",nein
+O06,bierflasche,"Hacker-Pschorr Münchner Hell 0,5 l, braun",nein
+O07,bierflasche,"Astra Urtyp 0,33 l, braun (Knolle)",nein
+O08,bierflasche,"Rothaus Tannenzäpfle 0,33 l, braun",nein
+O09,bierflasche,"Franziskaner Weißbier 0,5 l, braun",nein
+O10,bierflasche,"Discounter-Pils 0,5 l, NRW-Flasche braun",nein
+O11,bierflasche,"Löwenbräu Original 0,5 l, Euroflasche braun",ja
+O12,bierflasche,"Schöfferhofer Weizen 0,5 l, braun",ja
+O01,mehrweg,"Mineralwasser Perlenflasche 0,7 l Glas, klar (regionaler Brunnen)",nein
+O02,mehrweg,"Mineralwasser Perlenflasche 0,75 l Glas, klar, anderes Etikett",nein
+O03,mehrweg,"Gerolsteiner Sprudel 0,75 l Glas",nein
+O04,mehrweg,"Apollinaris Classic 0,75 l Glas",nein
+O05,mehrweg,"Selters Classic 0,75 l Glas",nein
+O06,mehrweg,"Apfelsaft 1,0 l Mehrweg-Glasflasche",nein
+O07,mehrweg,"Orangensaft 0,7 l Mehrweg-Glasflasche",nein
+O08,mehrweg,"Flensburger Pilsener 0,33 l Bügelflasche, braun",nein
+O09,mehrweg,"Grolsch 0,45 l Bügelflasche, grün",nein
+O10,mehrweg,"Limonade 0,33 l Mehrweg-Glas (Pfand 0,15 € prüfen)",nein
+O11,mehrweg,"Mineralwasser Perlenflasche 0,7 l Glas, Medium, dritter Brunnen",ja
+O12,mehrweg,"Flensburger Weizen oder andere Bügelflasche 0,5 l",ja
+O01,kein_pfand,"Rotweinflasche 0,75 l, grün",nein
+O02,kein_pfand,"Weißweinflasche 0,75 l, klar",nein
+O03,kein_pfand,"Wodka 0,7 l (z. B. Gorbatschow), klar",nein
+O04,kein_pfand,"Jägermeister 0,7 l, dunkelgrün",nein
+O05,kein_pfand,Milchkarton 1 l (Tetra Pak),nein
+O06,kein_pfand,Orangensaftkarton 1 l (Tetra Pak),nein
+O07,kein_pfand,Marmeladenglas (z. B. Bonne Maman 370 g),nein
+O08,kein_pfand,Gewürzgurkenglas (z. B. Kühne 720 ml),nein
+O09,kein_pfand,Spülmittelflasche (z. B. Pril 500 ml),nein
+O10,kein_pfand,Shampooflasche (z. B. Schauma 400 ml),nein
+O11,kein_pfand,"Sektflasche 0,75 l (z. B. Rotkäppchen), grün",ja
+O12,kein_pfand,Haferdrink-Karton 1 l (z. B. Oatly),ja
+U01,nichts,Schreibtisch hell (Holz),nein
+U02,nichts,Weiße Wand,nein
+U03,nichts,Küchenarbeitsplatte,nein
+U04,nichts,Zimmer mit Regal im Hintergrund,nein
+U05,nichts,Klassenzimmer-Tisch,nein
+U06,nichts,Fenster mit Gegenlicht,nein
+U07,nichts,Sofa / dunkler Stoff,nein
+U08,nichts,Teppich / Fußboden,nein
+U09,nichts,Flur,nein
+U10,nichts,Bücherregal,nein
+U11,nichts,Präsentationsraum mit Beamerwand,ja
+U12,nichts,Badezimmer / Fliesen,ja
