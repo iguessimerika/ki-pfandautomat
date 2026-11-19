@@ -11,16 +11,16 @@ O09,dose,"Discounter-Energy-Drink 0,25 l (z. B. Lidl/Aldi), silber",nein
 O10,dose,"Mezzo Mix 0,33 l, orange-weiß",nein
 O11,dose,"Pepsi 0,33 l, blau",ja
 O12,dose,"Bierdose Pils 0,5 l anderer Marke (z. B. Krombacher), silber-grün",ja
-O01,einweg_plastik,"Discounter-Mineralwasser still 1,5 l (z. B. Saskia), mit Deckel",nein
-O02,einweg_plastik,"Discounter-Mineralwasser medium 1,5 l, mit Deckel",nein
-O03,einweg_plastik,"Coca-Cola 0,5 l PET, rotes Etikett",nein
-O04,einweg_plastik,"Lipton Ice Tea Pfirsich 1,5 l PET",nein
-O05,einweg_plastik,"Volvic 0,5 l PET",nein
-O06,einweg_plastik,"Discounter-Orangensaft 1,0 l PET",nein
-O07,einweg_plastik,"Discounter-Eistee Zitrone 1,5 l PET, gelb",nein
-O08,einweg_plastik,"Sprite 0,5 l PET, grün transparent",nein
-O09,einweg_plastik,"Müllermilch Schoko 0,4 l PET, braun",nein
-O10,einweg_plastik,"Discounter-Wasser 0,5 l ohne Deckel, leicht eingedrückt",nein
+O01,einweg_plastik,"Adelholzener Mineralwasser PET, grüner Deckel (Größe bitte prüfen)",nein
+O02,einweg_plastik,"Gut & Günstig Classic Petrusquelle 1,5 l PET, weißer Deckel",nein
+O03,einweg_plastik,"Volvic 1,5 l PET, grüner Deckel",nein
+O04,einweg_plastik,"Volvic PET, kleinere Flasche, grüner Deckel (Größe bitte prüfen)",nein
+O05,einweg_plastik,"Evian 0,5 l PET, Sonderetikett „200“, blauer Deckel",nein
+O06,einweg_plastik,"Classic-Mineralwasser PET, blaues Etikett, weißer Deckel (Marke und Größe bitte prüfen)",nein
+O07,einweg_plastik,"Coca-Cola 0,5 l PET, rotes Etikett",nein
+O08,einweg_plastik,"Lipton Ice Tea Pfirsich 1,5 l PET",nein
+O09,einweg_plastik,"Discounter-Orangensaft 1,0 l PET",nein
+O10,einweg_plastik,"Müllermilch Schoko 0,4 l PET, braun",nein
 O11,einweg_plastik,"Pepsi 1,5 l PET, blaues Etikett",ja
 O12,einweg_plastik,"Discounter-Apfelschorle 1,5 l PET",ja
 O01,bierflasche,"Augustiner Helles 0,5 l, Euroflasche braun",nein
