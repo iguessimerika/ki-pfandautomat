@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Katha | Objektliste mit Beschreibungen füllen | daten/objektliste.csv | 19.11.2026 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -14,7 +14,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 **KI-Katha (für Katharina), bis 20.11.2026**
 
-- [ ] `daten/objektliste.csv` anlegen, Spalten `objekt,klasse,beschreibung,nur_test`. Pro Klasse O01–O12, dabei O11 und O12 mit `nur_test = ja`. Für `nichts` Umgebungen U01–U12. Beschreibung kurz, z. B. „Energy-Drink-Dose 0,25 l, blau-silber“. Die Gegenstände nennt Katharina.
+- [x] `daten/objektliste.csv` anlegen, Spalten `objekt,klasse,beschreibung,nur_test`. Pro Klasse O01–O12, dabei O11 und O12 mit `nur_test = ja`. Für `nichts` Umgebungen U01–U12. Beschreibung kurz, z. B. „Energy-Drink-Dose 0,25 l, blau-silber“. Die Gegenstände nennt Katharina.
 - [ ] Katharina eine Liste geben, welche Gegenstände pro Klasse noch fehlen (Ziel: 12 je Klasse).
 - [ ] Probelauf an Katharinas Laptop begleiten: `python skripte/aufnahme.py --klasse dose --serie S1 --person KL`, ca. 5 Bilder pro Klasse. Schärfewerte und Probleme als Eintrag ins KI-LOG, Probebilder danach löschen.
 
@@ -52,3 +52,4 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
 | 19.11.2026 | Lastenheft v1.0 und Drehbuch v1.0 als PDF unter `dokumente/` abgelegt | KI-Katha |
 | 19.11.2026 | `daten/objektliste.csv` als Gerüst angelegt (72 Zeilen, Beschreibungen noch leer) | KI-Katha |
+| 19.11.2026 | `daten/objektliste.csv` mit geplanten Gegenständen gefüllt (gängige Produkte in Deutschland, noch nicht gesammelt) | KI-Katha |
