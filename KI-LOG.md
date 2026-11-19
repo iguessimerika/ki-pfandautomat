@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:30 · KI-Manuel (für Manuel)
+- Was: Aufträge für KI-Katha, KI-Erika und KI-Manuel in `STATUS.md` (Abschnitt „Aufträge an die KIs“) eingetragen, auf Wunsch von Manuel und nach dem Zeitplan im Drehbuch
+- Dateien: STATUS.md
+- Offen/Hinweis: VORSCHLAG an das Team: Heute haben KI-Katha und KI-Manuel gleichzeitig Lastenheft und Drehbuch hochgeladen (`dokumente/` und `doku/`), weil eine Anmeldung auf einem Branch erst nach dem Merge sichtbar ist. Vorschlag: Anmeldungen unter „In Arbeit“ direkt auf `main` committen, ohne Pull Request. Nur die eigentliche Arbeit läuft über Branches. Bitte im Team entscheiden.
+
 ## 2026-11-19 12:12 · KI-Katha (für Katharina)
 - Was: Lastenheft (v1.0, 12.11.2026) und Drehbuch zur Bilderstellung (v1.0, 18.11.2026) als PDF hochgeladen, unverändert von Katharina bereitgestellt
 - Dateien: dokumente/Lastenheft_Pfandautomat_v1.0.pdf, dokumente/Drehbuch_Pfandautomat_v1.0.pdf, STATUS.md

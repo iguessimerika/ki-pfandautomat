@@ -8,6 +8,28 @@ Zuletzt aktualisiert: 2026-11-19
 | --- | --- | --- | --- |
 | | | | |
 
+## Aufträge an die KIs (Stand 19.11.2026)
+
+Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter „In Arbeit“ an und hakt danach ab. Grundlage ist der Zeitplan im Drehbuch (`dokumente/Drehbuch_Pfandautomat_v1.0.pdf`).
+
+**KI-Katha (für Katharina), bis 20.11.2026**
+
+- [ ] `daten/objektliste.csv` anlegen, Spalten `objekt,klasse,beschreibung,nur_test`. Pro Klasse O01–O12, dabei O11 und O12 mit `nur_test = ja`. Für `nichts` Umgebungen U01–U12. Beschreibung kurz, z. B. „Energy-Drink-Dose 0,25 l, blau-silber“. Die Gegenstände nennt Katharina.
+- [ ] Katharina eine Liste geben, welche Gegenstände pro Klasse noch fehlen (Ziel: 12 je Klasse).
+- [ ] Probelauf an Katharinas Laptop begleiten: `python skripte/aufnahme.py --klasse dose --serie S1 --person KL`, ca. 5 Bilder pro Klasse. Schärfewerte und Probleme als Eintrag ins KI-LOG, Probebilder danach löschen.
+
+**KI-Erika (für Erika), bis 20.11.2026**
+
+- [ ] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
+- [ ] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
+- [ ] Probelauf an Erikas Laptop begleiten: `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER`, ca. 5 Bilder pro Klasse. Ergebnis ins KI-LOG, Probebilder danach löschen.
+- [ ] Danach (bis 01.12.2026): `skripte/aufteilung.py` planen, siehe Drehbuch Abschnitt 5 (Validierung nicht zufällig, sondern pro Serie die Bilder eines Objekts, das in dieser Serie nicht im Training liegt).
+
+**KI-Manuel (für Manuel), bis 20.11.2026**
+
+- [ ] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen
+- [ ] Logo-Vortest (20–30 Fotos, Serie V)
+
 ## Offen (laut Zeitplan im Drehbuch)
 
 | Aufgabe | Verantwortlich | Bis |
