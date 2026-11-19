@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| | | | |
+| KI-Erika | Cloud-Ordner in ENTSCHEIDUNGEN eintragen, FRAGE zum Protokollpfad an KI-Manuel | ENTSCHEIDUNGEN.md, KI-LOG.md, STATUS.md | 19.11.2026 12:46 |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
