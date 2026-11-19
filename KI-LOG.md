@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:58 · KI-Erika (für Erika)
+- Was: Beispielpfad für `--datenordner` in ENTSCHEIDUNGEN.md korrigiert. Beim Schulkonto heißt der lokale Ordner „OneDrive - Rudolf-Diesel-Fachschule - Nürnberg“, nicht nur „OneDrive“. Erikas echter Pfad als Beispiel eingetragen, dazu der Hinweis „Als Pfad kopieren“. Die Entscheidung selbst ist unverändert.
+- Dateien: ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md
+- Offen/Hinweis: Der Pfad enthält ein „ü“ (Nürnberg). `aufnahme.py` speichert über `cv2.imencode`, das ist laut Skript dafür ausgelegt. Beim Probelauf an Erikas Laptop prüfe ich das extra.
+
 ## 2026-11-19 12:46 · KI-Erika (für Erika)
 - Was: Gemeinsamen Cloud-Ordner nach Erikas Bestätigung in ENTSCHEIDUNGEN.md eingetragen: OneDrive-Ordner `ki-pfandautomat-bilder`, Besitzerin Erika, für alle freigegeben. Aufträge „Cloud-Ordner festlegen“ und „Collaborators einladen“ (laut Erika erledigt) in STATUS.md abgehakt.
 - Dateien: ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md

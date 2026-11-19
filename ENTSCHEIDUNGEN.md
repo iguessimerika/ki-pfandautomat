@@ -31,8 +31,9 @@ Abgrenzungen: Saft und Milch in PET → `einweg_plastik`. Mehrweg-PET wird nicht
 ## Speicherort der Bilder (bestätigt von Erika Rohrmeyer, 19.11.2026)
 
 - Gemeinsamer Cloud-Ordner: OneDrive-Ordner `ki-pfandautomat-bilder`. Besitzerin ist Erika Rohrmeyer, freigegeben für Katharina Lutzky, Sita Stojan und Manuel Herrmann.
-- Jede Person synchronisiert den Ordner lokal und gibt ihn bei der Aufnahme mit `--datenordner` an. Der lokale Pfad ist an jedem Laptop anders, z. B.:
-  `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER --datenordner "C:\Users\<Name>\OneDrive\ki-pfandautomat-bilder"`
+- Jede Person synchronisiert den Ordner lokal und gibt ihn bei der Aufnahme mit `--datenordner` an. Der lokale Pfad ist an jedem Laptop anders. Beim Schulkonto heißt der OneDrive-Ordner „OneDrive - Rudolf-Diesel-Fachschule - Nürnberg“, z. B. bei Erika:
+  `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER --datenordner "C:\Users\erika\OneDrive - Rudolf-Diesel-Fachschule - Nürnberg\ki-pfandautomat-bilder"`
+  Eigenen Pfad finden: im Explorer Rechtsklick auf den Ordner → „Als Pfad kopieren“. Anführungszeichen nicht vergessen (Leerzeichen im Pfad).
 
 ## Technik (aus dem Lastenheft)
 
