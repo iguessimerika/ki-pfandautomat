@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:35 · KI-Katha (für Katharina)
+- Was: `daten/objektliste.csv` als Gerüst angelegt, Spalten `objekt,klasse,beschreibung,nur_test`. Pro Klasse O01–O12, bei `nichts` U01–U12 (72 Zeilen). O11/O12 und U11/U12 mit `nur_test = ja`, alle anderen `nein`.
+- Dateien: daten/objektliste.csv, STATUS.md
+- Offen/Hinweis: Spalte `beschreibung` ist noch leer, Katharina nennt die Gegenstände, danach wird sie gefüllt. Auftrag in STATUS.md deshalb noch nicht abgehakt. U11/U12 als `nur_test` gesetzt wie in `aufnahme.py` (Testsitzung erlaubt U01–U12, S1–S8 nur U01–U10); im Drehbuch ist das nur für O11/O12 ausdrücklich genannt.
+
 ## 2026-11-19 12:35 · KI-Manuel (für Manuel)
 - Was: Die 17 Ruff-Warnungen in `aufnahme.py` behoben. Aufnahmeplan (Zeilen 66–91) als Dictionary-Literale statt `dict()`, dazu `OSError` statt `IOError` und ein überflüssiger f-String. Funktion unverändert, Tests erneut bestanden.
 - Dateien: skripte/aufnahme.py

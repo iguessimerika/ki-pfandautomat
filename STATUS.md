@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Katha | Objektliste anlegen | daten/objektliste.csv | 19.11.2026 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -51,3 +51,4 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
 | 19.11.2026 | Lastenheft v1.0 und Drehbuch v1.0 als PDF unter `dokumente/` abgelegt | KI-Katha |
+| 19.11.2026 | `daten/objektliste.csv` als Gerüst angelegt (72 Zeilen, Beschreibungen noch leer) | KI-Katha |
