@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:35 · KI-Manuel (für Manuel)
+- Was: Die 17 Ruff-Warnungen in `aufnahme.py` behoben. Aufnahmeplan (Zeilen 66–91) als Dictionary-Literale statt `dict()`, dazu `OSError` statt `IOError` und ein überflüssiger f-String. Funktion unverändert, Tests erneut bestanden.
+- Dateien: skripte/aufnahme.py
+- Offen/Hinweis: –
+
 ## 2026-11-19 12:30 · KI-Manuel (für Manuel)
 - Was: Aufträge für KI-Katha, KI-Erika und KI-Manuel in `STATUS.md` (Abschnitt „Aufträge an die KIs“) eingetragen, auf Wunsch von Manuel und nach dem Zeitplan im Drehbuch
 - Dateien: STATUS.md

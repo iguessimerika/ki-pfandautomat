@@ -63,31 +63,31 @@ MERKMAL_TASTEN = {"h": "hintergrund", "l": "licht", "p": "perspektive",
 
 # Aufnahmeplan pro Klasse (Drehbuch, Abschnitt 2.3). Fehlende Merkmale = alle Werte erlaubt.
 PLAN_HAUPT = {
-    "S1": dict(ziel=20, hintergrund=["H1"], licht=["L1"], perspektive=["P1"], abstand=["A2"],
-               ausrichtung=["R1"], haltung=["G1"]),
-    "S2": dict(ziel=18, hintergrund=["H1"], licht=["L2"], perspektive=["P1", "P4"], abstand=["A1"],
-               ausrichtung=["R1", "R2"], haltung=["G1"]),
-    "S3": dict(ziel=18, hintergrund=["H2"], licht=["L2"], perspektive=["P1", "P2"], abstand=["A2"],
-               ausrichtung=["R1", "R2"], haltung=["G1"]),
-    "S4": dict(ziel=16, hintergrund=["H2"], licht=["L1"], perspektive=["P1", "P3"], abstand=["A3"],
-               ausrichtung=["R1"], haltung=["G1", "G3"]),
-    "S5": dict(ziel=16, hintergrund=["H1", "H2"], licht=["L3"], perspektive=["P1", "P3"], abstand=["A2"],
-               ausrichtung=["R1", "R2"], haltung=["G1"]),
-    "S6": dict(ziel=16, hintergrund=["H4"], licht=["L4"], perspektive=["P2", "P4"], abstand=["A1", "A2"],
-               ausrichtung=["R2", "R3"], haltung=["G1"]),
-    "S7": dict(ziel=16, hintergrund=["H3"], licht=["L2"], perspektive=["P1", "P2"], abstand=["A2"],
-               ausrichtung=["R1", "R3", "R4"], haltung=["G1"]),
-    "S8": dict(ziel=16, ausrichtung=["R3", "R4"], haltung=["G2", "G3"]),
-    "T": dict(ziel=24),
+    "S1": {"ziel": 20, "hintergrund": ["H1"], "licht": ["L1"], "perspektive": ["P1"], "abstand": ["A2"],
+           "ausrichtung": ["R1"], "haltung": ["G1"]},
+    "S2": {"ziel": 18, "hintergrund": ["H1"], "licht": ["L2"], "perspektive": ["P1", "P4"], "abstand": ["A1"],
+           "ausrichtung": ["R1", "R2"], "haltung": ["G1"]},
+    "S3": {"ziel": 18, "hintergrund": ["H2"], "licht": ["L2"], "perspektive": ["P1", "P2"], "abstand": ["A2"],
+           "ausrichtung": ["R1", "R2"], "haltung": ["G1"]},
+    "S4": {"ziel": 16, "hintergrund": ["H2"], "licht": ["L1"], "perspektive": ["P1", "P3"], "abstand": ["A3"],
+           "ausrichtung": ["R1"], "haltung": ["G1", "G3"]},
+    "S5": {"ziel": 16, "hintergrund": ["H1", "H2"], "licht": ["L3"], "perspektive": ["P1", "P3"], "abstand": ["A2"],
+           "ausrichtung": ["R1", "R2"], "haltung": ["G1"]},
+    "S6": {"ziel": 16, "hintergrund": ["H4"], "licht": ["L4"], "perspektive": ["P2", "P4"], "abstand": ["A1", "A2"],
+           "ausrichtung": ["R2", "R3"], "haltung": ["G1"]},
+    "S7": {"ziel": 16, "hintergrund": ["H3"], "licht": ["L2"], "perspektive": ["P1", "P2"], "abstand": ["A2"],
+           "ausrichtung": ["R1", "R3", "R4"], "haltung": ["G1"]},
+    "S8": {"ziel": 16, "ausrichtung": ["R3", "R4"], "haltung": ["G2", "G3"]},
+    "T": {"ziel": 24},
 }
 # Logo-Modell (Drehbuch, Abschnitt 2.4)
 PLAN_LOGO = {
-    "V": dict(ziel=30, licht=["L1", "L2"]),
-    "LG1": dict(ziel=60, licht=["L1", "L2"]),
-    "LG2": dict(ziel=50, licht=["L1", "L2"]),
-    "LG3": dict(ziel=40, licht=["L3", "L4"]),
-    "LG4": dict(ziel=20),
-    "LT": dict(ziel=30),
+    "V": {"ziel": 30, "licht": ["L1", "L2"]},
+    "LG1": {"ziel": 60, "licht": ["L1", "L2"]},
+    "LG2": {"ziel": 50, "licht": ["L1", "L2"]},
+    "LG3": {"ziel": 40, "licht": ["L3", "L4"]},
+    "LG4": {"ziel": 20},
+    "LT": {"ziel": 30},
 }
 
 PROTOKOLL_SPALTEN = ["dateiname", "klasse", "serie", "objekt", "hintergrund", "licht", "perspektive",
@@ -151,7 +151,7 @@ def bild_schreiben(pfad: Path, bild: np.ndarray) -> None:
     """cv2.imwrite scheitert unter Windows an Umlauten im Pfad (z. B. 'Fächer'), daher über imencode."""
     ok, puffer = cv2.imencode(".jpg", bild, [cv2.IMWRITE_JPEG_QUALITY, 95])
     if not ok:
-        raise IOError("Bild konnte nicht kodiert werden")
+        raise OSError("Bild konnte nicht kodiert werden")
     pfad.write_bytes(puffer.tobytes())
 
 
@@ -285,7 +285,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
             sitzung.append(pfad)
             meldung, meldung_farbe = f"Gespeichert: {pfad.name}", (0, 255, 0)
             if scharf < SCHAERFE_GRENZE:
-                meldung, meldung_farbe = f"Gespeichert, aber unscharf: mit z loeschen?", (0, 165, 255)
+                meldung, meldung_farbe = "Gespeichert, aber unscharf: mit z loeschen?", (0, 165, 255)
         elif taste == ord("n"):
             objekt_nr = (objekt_nr + 1) % len(objekte)
         elif taste == ord("b"):
