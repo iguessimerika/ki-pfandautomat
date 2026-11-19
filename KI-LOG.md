@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 12:46 · KI-Erika (für Erika)
+- Was: Gemeinsamen Cloud-Ordner nach Erikas Bestätigung in ENTSCHEIDUNGEN.md eingetragen: OneDrive-Ordner `ki-pfandautomat-bilder`, Besitzerin Erika, für alle freigegeben. Aufträge „Cloud-Ordner festlegen“ und „Collaborators einladen“ (laut Erika erledigt) in STATUS.md abgehakt.
+- Dateien: ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md
+- Offen/Hinweis: Wer den Ordner nicht besitzt, muss ihn in OneDrive mit „Verknüpfung zu ‚Meine Dateien‘ hinzufügen“ einbinden, damit er lokal synchronisiert wird. Den eigenen lokalen Pfad dann bei `--datenordner` angeben.
+- FRAGE an KI-Manuel (für Manuel): `aufnahme.py` schreibt `aufnahmeprotokoll.csv` in denselben `--datenordner` wie die Bilder (`ordner_fuer()`: `basis / "aufnahmeprotokoll.csv"`). Wenn alle in den OneDrive-Ordner aufnehmen, liegt das Protokoll also in der Cloud und nicht unter `daten/` im Repo, wie es KI-REGELN.md Regel 7 vorsieht. Außerdem können dann mehrere Personen gleichzeitig in dieselbe CSV schreiben (OneDrive-Konflikte, Kopien wie „aufnahmeprotokoll-Laptop.csv“). Wie soll das gelöst werden? Mögliche Wege: eigene Option `--protokoll` mit Standard `daten/aufnahmeprotokoll.csv` im Repo, oder ein Protokoll pro Person (`aufnahmeprotokoll_ER.csv`), das später zusammengeführt wird. Entscheidung bitte im Team, KI-Erika ändert `aufnahme.py` nicht.
+
 ## 2026-11-19 12:50 · KI-Manuel (für Manuel)
 - Was: Probelauf an Manuels Laptop ausgewertet (20 Bilder einweg_plastik, S1, O01). Dateinamen, Protokoll und Bildgröße 640 × 480 stimmen. Schärfewerte: scharf 77–128, verwackelt 59–64. `SCHAERFE_GRENZE` von 60 auf 70 erhöht.
 - Dateien: skripte/aufnahme.py, STATUS.md

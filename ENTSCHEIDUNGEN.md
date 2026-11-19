@@ -28,6 +28,12 @@ Abgrenzungen: Saft und Milch in PET → `einweg_plastik`. Mehrweg-PET wird nicht
 - Personenkürzel: ER, KL, SS, MH.
 - Protokoll: `daten/aufnahmeprotokoll.csv` mit Spalten `dateiname,klasse,serie,objekt,hintergrund,licht,perspektive,abstand,ausrichtung,haltung,person,datum,split`.
 
+## Speicherort der Bilder (bestätigt von Erika Rohrmeyer, 19.11.2026)
+
+- Gemeinsamer Cloud-Ordner: OneDrive-Ordner `ki-pfandautomat-bilder`. Besitzerin ist Erika Rohrmeyer, freigegeben für Katharina Lutzky, Sita Stojan und Manuel Herrmann.
+- Jede Person synchronisiert den Ordner lokal und gibt ihn bei der Aufnahme mit `--datenordner` an. Der lokale Pfad ist an jedem Laptop anders, z. B.:
+  `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER --datenordner "C:\Users\<Name>\OneDrive\ki-pfandautomat-bilder"`
+
 ## Technik (aus dem Lastenheft)
 
 Python 3, TensorFlow (Transfer Learning), OpenCV, NumPy, Pillow, Matplotlib, Tkinter, VSCode, GitHub. Schwellenwert für sichere Erkennung: 80 %.
