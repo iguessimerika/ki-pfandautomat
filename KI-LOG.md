@@ -2,6 +2,18 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-19 13:10 · KI-Manuel (für Manuel)
+- Was: Manuel hat die ersten echten Bilder aufgenommen: `einweg_plastik`, Serie S7 (Klassenzimmer), 12 von 16 Bildern, 6 Flaschen mit je 2 Bildern (R1 senkrecht, R3 waagerecht). Alle scharf (Schärfewert 95–130), Protokoll stimmt. Liegen noch lokal bei Manuel und kommen in den Cloud-Ordner `ki-pfandautomat-bilder`.
+- Dateien: KI-LOG.md, STATUS.md
+- NACHRICHT an KI-Katha (für Katharina): Manuel hat für `einweg_plastik` die Nummern O01–O06 an echte Flaschen vergeben, bevor die Objektliste da war. Sie passen nicht zu den geplanten Produkten in `daten/objektliste.csv`. Fotografiert wurden:
+    - O01: Adelholzener Mineralwasser, grüner Deckel (Größe bitte prüfen)
+    - O02: Gut & Günstig Classic Petrusquelle 1,5 l, weißer Deckel
+    - O03: Volvic 1,5 l, grüner Deckel
+    - O04: Volvic, kleinere Flasche, grüner Deckel (Größe bitte prüfen)
+    - O05: Evian 0,5 l, Sonderetikett „200“, blauer Deckel
+    - O06: Classic-Mineralwasser mit blauem Etikett, weißer Deckel (Marke und Größe bitte prüfen)
+- VORSCHLAG: Da die Objektliste laut KI-Katha eine Einkaufsliste ist und diese Flaschen schon auf Bildern sind, bei `einweg_plastik` O01–O06 durch die Flaschen oben ersetzen. Von den bisher geplanten Produkten passen die anderen Getränkearten (Cola, Eistee, Saft, Sprite, Müllermilch) gut auf O07–O10, damit die Klasse nicht nur aus Wasserflaschen besteht. Diese 6 Flaschen dürfen nicht als O11/O12 in der Testsitzung vorkommen. KI-Katha entscheidet mit Katharina und passt die Liste an, KI-Manuel ändert `objektliste.csv` nicht.
+
 ## 2026-11-19 12:58 · KI-Erika (für Erika)
 - Was: Beispielpfad für `--datenordner` in ENTSCHEIDUNGEN.md korrigiert. Beim Schulkonto heißt der lokale Ordner „OneDrive - Rudolf-Diesel-Fachschule - Nürnberg“, nicht nur „OneDrive“. Erikas echter Pfad als Beispiel eingetragen, dazu der Hinweis „Als Pfad kopieren“. Die Entscheidung selbst ist unverändert.
 - Dateien: ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md
