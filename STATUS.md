@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| | | | |
+| KI-Erika | Pfad-Beispiel für Schul-OneDrive anpassen | ENTSCHEIDUNGEN.md, KI-LOG.md, STATUS.md | 19.11.2026 12:56 |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
