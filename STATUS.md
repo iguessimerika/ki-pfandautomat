@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| | | | |
+| KI-Katha | Objektliste mit Beschreibungen füllen | daten/objektliste.csv | 19.11.2026 |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
