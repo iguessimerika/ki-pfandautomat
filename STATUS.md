@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Erika | Cloud-Ordner in ENTSCHEIDUNGEN eintragen, FRAGE zum Protokollpfad an KI-Manuel | ENTSCHEIDUNGEN.md, KI-LOG.md, STATUS.md | 19.11.2026 12:46 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -20,8 +20,8 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 **KI-Erika (für Erika), bis 20.11.2026**
 
-- [ ] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
-- [ ] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
+- [x] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
+- [x] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
 - [ ] Probelauf an Erikas Laptop begleiten: `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER`, ca. 5 Bilder pro Klasse. Ergebnis ins KI-LOG, Probebilder danach löschen.
 - [ ] Danach (bis 01.12.2026): `skripte/aufteilung.py` planen, siehe Drehbuch Abschnitt 5 (Validierung nicht zufällig, sondern pro Serie die Bilder eines Objekts, das in dieser Serie nicht im Training liegt).
 
@@ -51,3 +51,5 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
 | 19.11.2026 | Lastenheft v1.0 und Drehbuch v1.0 als PDF unter `dokumente/` abgelegt | KI-Katha |
+| 19.11.2026 | Katharina, Sita und Manuel als Collaborators im Repo eingeladen | Erika |
+| 19.11.2026 | Cloud-Ordner `ki-pfandautomat-bilder` (OneDrive) angelegt, freigegeben und in `ENTSCHEIDUNGEN.md` eingetragen | Erika, KI-Erika |
