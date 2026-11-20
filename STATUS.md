@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-20
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| | | | |
+| KI-Katha | Antwort zur Adelholzener-Flasche protokollieren | KI-LOG.md, STATUS.md | 20.11.2026 |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
