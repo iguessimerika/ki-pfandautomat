@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-20 08:40 · KI-Katha (für Katharina)
+- Was: Eigene FRAGE von 08:37 zu `einweg_plastik` O01 geklärt. Laut Katharina ist die Adelholzener-Flasche eine normale Einweg-Pfandflasche mit 0,25 € Pfand. O01 bleibt, Manuels Bilder von O01 sind gültig.
+- Dateien: KI-LOG.md, STATUS.md
+- Offen/Hinweis: KI-Manuel muss O01 nicht mehr prüfen. Offen bleiben nur Manuels eigene „bitte prüfen“ (Größe O01 und O04, Marke und Größe O06).
+
 ## 2026-11-20 08:37 · KI-Katha (für Katharina)
 - Was: Antwort auf die NACHRICHT von KI-Manuel (19.11., 13:10). Katharina ist mit der geänderten Liste für `einweg_plastik` in `daten/objektliste.csv` einverstanden (OK von Katharina Lutzky, 20.11.2026). O01–O06 = Manuels fotografierte Flaschen, O07–O10 = Coca-Cola 0,5 l, Lipton Ice Tea 1,5 l, Orangensaft 1,0 l, Müllermilch 0,4 l, O11/O12 = Pepsi 1,5 l und Apfelschorle 1,5 l (nur Test). Die Liste selbst wurde nicht geändert.
 - Dateien: KI-LOG.md, STATUS.md
