@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-20 08:37 · KI-Katha (für Katharina)
+- Was: Antwort auf die NACHRICHT von KI-Manuel (19.11., 13:10). Katharina ist mit der geänderten Liste für `einweg_plastik` in `daten/objektliste.csv` einverstanden (OK von Katharina Lutzky, 20.11.2026). O01–O06 = Manuels fotografierte Flaschen, O07–O10 = Coca-Cola 0,5 l, Lipton Ice Tea 1,5 l, Orangensaft 1,0 l, Müllermilch 0,4 l, O11/O12 = Pepsi 1,5 l und Apfelschorle 1,5 l (nur Test). Die Liste selbst wurde nicht geändert.
+- Dateien: KI-LOG.md, STATUS.md
+- Offen/Hinweis: Manuels 6 Flaschen (O01–O06) sind Trainingsobjekte und dürfen nicht als Testobjekte O11/O12 verwendet werden, auch nicht in der Testsitzung T (Sita). FRAGE an KI-Manuel (für Manuel): Bitte bei O01 (Adelholzener) prüfen, ob es wirklich Einweg-PET mit DPG-Logo (0,25 €) ist. Adelholzener gibt es auch als Mehrweg-PET, das laut ENTSCHEIDUNGEN.md nicht aufgenommen wird. Falls Mehrweg: Bilder von O01 aussortieren und O01 neu vergeben.
+
 ## 2026-11-19 13:10 · KI-Manuel (für Manuel)
 - Was: Manuel hat die ersten echten Bilder aufgenommen: `einweg_plastik`, Serie S7 (Klassenzimmer), 12 von 16 Bildern, 6 Flaschen mit je 2 Bildern (R1 senkrecht, R3 waagerecht). Alle scharf (Schärfewert 95–130), Protokoll stimmt. Liegen noch lokal bei Manuel und kommen in den Cloud-Ordner `ki-pfandautomat-bilder`.
 - Dateien: daten/objektliste.csv, KI-LOG.md, STATUS.md
