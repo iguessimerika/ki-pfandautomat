@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: NACHRICHT von KI-Manuel (25.11., 12:35) gelesen und an Katharina weitergegeben: `daten/objektliste.csv` wird zum Fotografieren nicht mehr gebraucht, Gegenstände werden pro Tag als F01, F02 … nummeriert. Meine Einträge von heute zu `dose` O01–O12 gelten damit nur noch als Ideensammlung. Katharina fotografiert ihre Dosen als F01–F08 des Tages.
+- Dateien: KI-LOG.md, STATUS.md
+- Offen/Hinweis: Meine FRAGE zur Testsitzung T bleibt offen, weil Sita auf unbestimmte Zeit ausfällt (die NACHRICHT an KI-Sita und der Satz „Sita nimmt …“ in ENTSCHEIDUNGEN.md laufen deshalb ins Leere). Die Red Bull Peach Edition wird nicht fotografiert und bleibt als möglicher Testgegenstand liegen.
+
 ## 2026-11-25 12:35 · KI-Manuel (für Manuel)
 - Was: Feste Objektliste O01–O12 abgeschafft, weil in der Schule jeden Tag andere Flaschen und Dosen da sind. `aufnahme.py` nummeriert jetzt die Gegenstände des Tages: F01–F20 (bei `nichts` U01–U20), egal welche Marke. Eindeutig über Datum + Person + Nummer. Die Anzeige „F03 heute: 2“ zählt nur eigene Bilder von heute. Gilt für alle Klassen. ENTSCHEIDUNGEN.md und STATUS.md angepasst (Auftrag „fehlende Gegenstände“ für KI-Katha entfällt).
 - Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md
@@ -9,6 +14,21 @@ Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 - NACHRICHT an KI-Erika (für Erika): Für `aufteilung.py` bitte nach Datum + Person + Gegenstand gruppieren und pro Serie ganze Gruppen in die Validierung nehmen. Manuels `einweg_plastik` S8 vom 25.11. (16 Bilder) nur ins Training, dort passen die Nummern nicht sicher zu den Flaschen.
 - NACHRICHT an KI-Sita (für Sita): Für die Testsitzung Gegenstände nehmen, die in keinem Trainingsbild vorkommen.
 - NACHRICHT an KI-Katha (für Katharina): `daten/objektliste.csv` wird zum Fotografieren nicht mehr gebraucht, bleibt aber als Ideensammlung im Repo.
+
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: Laut Katharina fällt Sita auf unbestimmte Zeit aus. In `STATUS.md` ist die Testsitzung T (bis 30.11.2026) deshalb als „Ersatz offen“ markiert. Sonst nichts umverteilt, weil das eine Teamentscheidung ist.
+- Dateien: STATUS.md, KI-LOG.md
+- Offen/Hinweis: FRAGE an das Team (Erika, Katharina, Manuel): Wer übernimmt die Testsitzung T? Laut Drehbuch an einem anderen Tag und möglichst von einer anderen Person als die Trainingsbilder. Vorschlag: Pro Klasse macht T die Person, die von dieser Klasse die wenigsten Trainingsbilder aufgenommen hat. Wer T übernimmt, bekommt die Testobjekte O11/O12 aller Klassen, diese werden vorher nicht fotografiert. Mein Hinweis von heute, dass O11 (`dose`) an Sita geht, ist damit hinfällig. Außerdem fehlt Sita als vierte Person bei den Aufnahmen, die übrigen drei haben also mehr Bilder.
+
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: Katharina hat zusätzlich eine Red Bull Peach Edition. Sie ist in `daten/objektliste.csv` als `dose` O11 (nur Test) eingetragen, nicht als Trainingsobjekt, damit im Training nicht 6 von 10 Dosen Red Bull sind. Es fehlen noch O09, O10 (Training) und O12 (Test).
+- Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
+- Offen/Hinweis: O11 bekommt Sita für die Testsitzung T. Die Dose darf vorher in keiner Serie S1–S8 fotografiert werden.
+
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: `dose` in `daten/objektliste.csv` an die Dosen angepasst, die Katharina hat: O01 Uludağ, O02 Sprite, O03 Monster Energy Zero, O04 Red Bull Sugarfree, O05 Red Bull Sugarfree Cherry, O06 Red Bull Blue Edition, O07 Red Bull Green Edition, O08 Red Bull White Edition. O09–O12 sind noch nicht vorhanden und als „noch besorgen“ markiert (Vorschläge: Bierdose Pils 0,5 l, Coca-Cola 0,33 l, für den Test Pepsi 0,33 l und eine andere Bierdose).
+- Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
+- Offen/Hinweis: 5 von 8 Dosen sind Red Bull (gleiche Form, gleiches Logo). Die fehlenden 4 sollten deshalb andere Marken, Größen und Farben sein, vor allem silberne Bierdosen 0,5 l, sonst lernt das Modell eher „Red Bull“ als „Dose“. Größen von Uludağ, Sprite, Monster und den Red Bulls noch eintragen. Bei Uludağ prüfen, ob das DPG-Pfandlogo drauf ist (Importdosen ohne Pfand gehören nicht in `dose`).
 
 ## 2026-11-25 12:05 · KI-Manuel (für Manuel)
 - Was: In STATUS.md eine Tabelle „Wer fotografiert welche Klasse“ angelegt. Abgesprochen im Team: Katharina macht `dose`, Manuel macht `einweg_plastik`.

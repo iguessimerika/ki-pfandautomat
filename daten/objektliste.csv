@@ -1,16 +1,16 @@
 objekt,klasse,beschreibung,nur_test
-O01,dose,"Coca-Cola 0,33 l, rot",nein
-O02,dose,"Coca-Cola Zero 0,33 l, schwarz",nein
-O03,dose,"Red Bull 0,25 l, blau-silber",nein
-O04,dose,"Monster Energy 0,5 l, schwarz-grün",nein
-O05,dose,"Fanta Orange 0,33 l, orange",nein
-O06,dose,"Sprite 0,33 l, grün",nein
-O07,dose,"Lipton Ice Tea Pfirsich 0,33 l, gelb-orange",nein
-O08,dose,"Bierdose Pils 0,5 l (z. B. Oettinger), weiß-silber",nein
-O09,dose,"Discounter-Energy-Drink 0,25 l (z. B. Lidl/Aldi), silber",nein
-O10,dose,"Mezzo Mix 0,33 l, orange-weiß",nein
-O11,dose,"Pepsi 0,33 l, blau",ja
-O12,dose,"Bierdose Pils 0,5 l anderer Marke (z. B. Krombacher), silber-grün",ja
+O01,dose,"Uludağ Limonade, Dose (Größe bitte prüfen)",nein
+O02,dose,"Sprite, Dose, grün (Größe bitte prüfen)",nein
+O03,dose,"Monster Energy Zero, Dose (Größe bitte prüfen)",nein
+O04,dose,"Red Bull Sugarfree",nein
+O05,dose,"Red Bull Sugarfree Cherry",nein
+O06,dose,"Red Bull Blue Edition, blau",nein
+O07,dose,"Red Bull Green Edition, grün",nein
+O08,dose,"Red Bull White Edition, weiß",nein
+O09,dose,"noch besorgen: Bierdose Pils 0,5 l, silber (kein Red Bull)",nein
+O10,dose,"noch besorgen: Coca-Cola 0,33 l, rot (kein Red Bull)",nein
+O11,dose,"Red Bull Peach Edition (nur Test)",ja
+O12,dose,"noch besorgen: Bierdose 0,5 l anderer Marke (nur Test)",ja
 O01,einweg_plastik,"Adelholzener Mineralwasser PET, grüner Deckel (Größe bitte prüfen)",nein
 O02,einweg_plastik,"Gut & Günstig Classic Petrusquelle 1,5 l PET, weißer Deckel",nein
 O03,einweg_plastik,"Volvic 1,5 l PET, grüner Deckel",nein
