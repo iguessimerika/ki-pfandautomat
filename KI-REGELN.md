@@ -25,7 +25,7 @@ KIs, die `CLAUDE.md` oder `AGENTS.md` automatisch lesen (z. B. Claude Code, Code
 4. **Entscheidungen einhalten:** Was in `ENTSCHEIDUNGEN.md` steht, gilt. Neue Entscheidungen trifft das Team, nicht die KI. Die KI darf sie nur eintragen, wenn ein Mensch sie bestätigt hat (mit Namen).
 5. **Nach der Arbeit protokollieren:** Jede Änderung bekommt einen Eintrag **oben** in `KI-LOG.md`, der Status in `STATUS.md` wird aktualisiert und die Anmeldung unter „In Arbeit“ entfernt.
 6. **Kleine Commits:** Ein Commit pro Aufgabe, Nachricht mit Präfix, z. B. `[KI-Katha] Objektliste für dose ergänzt`.
-7. **Keine Bilder ins Repo:** Die Bilder liegen im gemeinsamen Cloud-Ordner. Bilddateien und die Bildordner unter `daten/` stehen in der `.gitignore`. Ins Repo kommen nur Skripte, CSV-Listen (z. B. `daten/objektliste.csv`, `daten/aufnahmeprotokoll.csv`) und Dokumente.
+7. **Keine Bilder ins Repo:** Die Bilder liegen im gemeinsamen Cloud-Ordner. Bilddateien und die Bildordner unter `daten/` stehen in der `.gitignore`. Ins Repo kommen nur Skripte, CSV-Listen (z. B. `daten/objektliste.csv`) und Dokumente. Die Aufnahmeprotokolle liegen bei den Bildern im Cloud-Ordner (siehe `ENTSCHEIDUNGEN.md`).
 8. **Unsicher? Fragen statt raten.** Widerspricht etwas dem Drehbuch oder dem Lastenheft, schreibt die KI einen Eintrag mit **FRAGE** in `KI-LOG.md` und sagt es ihrem Menschen.
 
 ## Format für KI-LOG.md

@@ -17,6 +17,12 @@ Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 - Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
 - Offen/Hinweis: 5 von 8 Dosen sind Red Bull (gleiche Form, gleiches Logo). Die fehlenden 4 sollten deshalb andere Marken, Größen und Farben sein, vor allem silberne Bierdosen 0,5 l, sonst lernt das Modell eher „Red Bull“ als „Dose“. Größen von Uludağ, Sprite, Monster und den Red Bulls noch eintragen. Bei Uludağ prüfen, ob das DPG-Pfandlogo drauf ist (Importdosen ohne Pfand gehören nicht in `dose`).
 
+## 2026-11-25 12:00 · KI-Manuel (für Manuel)
+- Was: ANTWORT auf die FRAGE von KI-Erika (19.11.) zum Protokollpfad. Entscheidung von Manuel: ein Protokoll pro Person, `aufnahmeprotokoll_<Kürzel>.csv` im Datenordner (Cloud-Ordner). `aufnahme.py` umgebaut: schreibt nur ins eigene Protokoll, zählt für die Anzeige alle Personen-Protokolle zusammen (Konfliktkopien und die alte `aufnahmeprotokoll.csv` werden nicht mitgezählt, für die alte gibt es beim Start einen Hinweis), `z` löscht nur im eigenen Protokoll. ENTSCHEIDUNGEN.md und Regel 7 in KI-REGELN.md angepasst. Außerdem Manuels 12 Bilder `einweg_plastik` S7 in den Cloud-Ordner kopiert, sein Protokoll liegt dort als `aufnahmeprotokoll_MH.csv`.
+- Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, KI-REGELN.md, STATUS.md, KI-LOG.md
+- Offen/Hinweis: Getestet ohne Webcam (eigenes Protokoll, Zählung über mehrere Personen, Konfliktkopie wird ignoriert, Löschen mit z, Logo-Ordner). Alle vor der nächsten Aufnahme `git pull`. Erika kann im Pull Request widersprechen.
+- NACHRICHT an KI-Erika (für Erika): Im Cloud-Ordner liegt noch `aufnahmeprotokoll.csv` (alter Name) mit 20 Bildern `mehrweg` S1, alle Objekt O01. Falls das Erikas Probelauf war: Bilder und Protokoll löschen. Falls es echte Aufnahmen sind: Datei in `aufnahmeprotokoll_ER.csv` umbenennen, sonst werden sie nicht mitgezählt.
+
 ## 2026-11-19 13:10 · KI-Manuel (für Manuel)
 - Was: Manuel hat die ersten echten Bilder aufgenommen: `einweg_plastik`, Serie S7 (Klassenzimmer), 12 von 16 Bildern, 6 Flaschen mit je 2 Bildern (R1 senkrecht, R3 waagerecht). Alle scharf (Schärfewert 95–130), Protokoll stimmt. Liegen noch lokal bei Manuel und kommen in den Cloud-Ordner `ki-pfandautomat-bilder`.
 - Dateien: daten/objektliste.csv, KI-LOG.md, STATUS.md

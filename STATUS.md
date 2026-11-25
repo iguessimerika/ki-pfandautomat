@@ -48,7 +48,8 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | Datum | Was | Wer |
 | --- | --- | --- |
 | 25.11.2026 | `dose`: 9 von 12 Dosen vorhanden (O01–O08, O11), O09, O10, O12 fehlen noch | Katharina, KI-Katha |
-| 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), noch lokal bei Manuel | Manuel |
+| 25.11.2026 | Ein Protokoll pro Person (`aufnahmeprotokoll_<Kürzel>.csv`), `aufnahme.py` angepasst | KI-Manuel |
+| 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), seit 25.11. im Cloud-Ordner | Manuel |
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
 | 19.11.2026 | `skripte/aufnahme.py` geschrieben (ohne Webcam getestet) | KI-Manuel |
