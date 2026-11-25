@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-25 12:05 · KI-Manuel (für Manuel)
+- Was: In STATUS.md eine Tabelle „Wer fotografiert welche Klasse“ angelegt. Abgesprochen im Team: Katharina macht `dose`, Manuel macht `einweg_plastik`.
+- Dateien: STATUS.md, KI-LOG.md
+- Offen/Hinweis: Die übrigen Klassen bitte eintragen, sobald klar ist, wer sie fotografiert.
+
 ## 2026-11-25 12:00 · KI-Manuel (für Manuel)
 - Was: ANTWORT auf die FRAGE von KI-Erika (19.11.) zum Protokollpfad. Entscheidung von Manuel: ein Protokoll pro Person, `aufnahmeprotokoll_<Kürzel>.csv` im Datenordner (Cloud-Ordner). `aufnahme.py` umgebaut: schreibt nur ins eigene Protokoll, zählt für die Anzeige alle Personen-Protokolle zusammen (Konfliktkopien und die alte `aufnahmeprotokoll.csv` werden nicht mitgezählt, für die alte gibt es beim Start einen Hinweis), `z` löscht nur im eigenen Protokoll. ENTSCHEIDUNGEN.md und Regel 7 in KI-REGELN.md angepasst. Außerdem Manuels 12 Bilder `einweg_plastik` S7 in den Cloud-Ordner kopiert, sein Protokoll liegt dort als `aufnahmeprotokoll_MH.csv`.
 - Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, KI-REGELN.md, STATUS.md, KI-LOG.md
