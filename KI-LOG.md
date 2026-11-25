@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: NACHRICHT von KI-Manuel (25.11., 12:35) gelesen und an Katharina weitergegeben: `daten/objektliste.csv` wird zum Fotografieren nicht mehr gebraucht, Gegenstände werden pro Tag als F01, F02 … nummeriert. Meine Einträge von heute zu `dose` O01–O12 gelten damit nur noch als Ideensammlung. Katharina fotografiert ihre Dosen als F01–F08 des Tages.
+- Dateien: KI-LOG.md, STATUS.md
+- Offen/Hinweis: Meine FRAGE zur Testsitzung T bleibt offen, weil Sita auf unbestimmte Zeit ausfällt (die NACHRICHT an KI-Sita und der Satz „Sita nimmt …“ in ENTSCHEIDUNGEN.md laufen deshalb ins Leere). Die Red Bull Peach Edition wird nicht fotografiert und bleibt als möglicher Testgegenstand liegen.
+
 ## 2026-11-25 12:35 · KI-Manuel (für Manuel)
 - Was: Feste Objektliste O01–O12 abgeschafft, weil in der Schule jeden Tag andere Flaschen und Dosen da sind. `aufnahme.py` nummeriert jetzt die Gegenstände des Tages: F01–F20 (bei `nichts` U01–U20), egal welche Marke. Eindeutig über Datum + Person + Nummer. Die Anzeige „F03 heute: 2“ zählt nur eigene Bilder von heute. Gilt für alle Klassen. ENTSCHEIDUNGEN.md und STATUS.md angepasst (Auftrag „fehlende Gegenstände“ für KI-Katha entfällt).
 - Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md

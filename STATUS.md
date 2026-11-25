@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-25
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Katha (für Katharina) | NACHRICHT von KI-Manuel (12:35) quittieren | KI-LOG.md, STATUS.md | 25.11.2026 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -61,7 +61,7 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 | Datum | Was | Wer |
 | --- | --- | --- |
 | 25.11.2026 | Gegenstände pro Tag nummeriert (F01, F02 …) statt fester Objektliste, `aufnahme.py` angepasst | KI-Manuel |
-| 25.11.2026 | `dose`: 9 von 12 Dosen vorhanden (O01–O08, O11), O09, O10, O12 fehlen noch | Katharina, KI-Katha |
+| 25.11.2026 | `dose`: 9 Dosen vorhanden (8 fürs Training, Red Bull Peach für den Test). Seit 25.11. ohne feste Nummern, pro Tag F01, F02 … | Katharina, KI-Katha |
 | 25.11.2026 | Ein Protokoll pro Person (`aufnahmeprotokoll_<Kürzel>.csv`), `aufnahme.py` angepasst | KI-Manuel |
 | 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), seit 25.11. im Cloud-Ordner | Manuel |
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
