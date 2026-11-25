@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-19
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| | | | |
+| KI-Katha (für Katharina) | Objektliste `dose` an vorhandene Dosen anpassen | daten/objektliste.csv | 25.11.2026 |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
