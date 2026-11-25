@@ -3,6 +3,10 @@ aufnahme.py – Webcam-Aufnahme für den Bilddatensatz Pfandautomat.
 
 Zeigt das Live-Bild der Webcam. Pro Tastendruck wird genau ein Bild gespeichert,
 automatisch benannt und im Aufnahmeprotokoll eingetragen (siehe ENTSCHEIDUNGEN.md).
+Gegenstände werden pro Aufnahmetag durchnummeriert: F01, F02 … sind die Flaschen/Dosen, die man
+an diesem Tag vor sich hat, egal welche Marke (bei "nichts" Umgebungen U01, U02 …). Eindeutig wird ein
+Gegenstand erst durch Datum + Person + Nummer, die alle im Protokoll stehen. Innerhalb eines Tages muss
+F01 also immer derselbe Gegenstand sein.
 Jede Person hat ein eigenes Protokoll aufnahmeprotokoll_<Kürzel>.csv im Datenordner, damit es im
 gemeinsamen Cloud-Ordner keine Schreibkonflikte gibt. Der Zähler im Bild zählt alle Protokolle zusammen.
 
@@ -14,14 +18,14 @@ Optionen:
                    (Logo-Modell: dpg_logo | mehrweg_logo | kein_logo)
     --serie        S1 ... S8, T (Hauptmodell) bzw. V, LG1 ... LG4, LT (Logo-Modell)
     --person       ER | KL | SS | MH
-    --objekt       Start-Objekt, z. B. O01 (bei "nichts": U01). Standard: erstes erlaubtes
+    --objekt       Start-Flasche, z. B. F03 (bei "nichts": U03). Standard: F01 bzw. U01
     --kamera       Index der Webcam, Standard 0
     --datenordner  Ordner für Bilder und Protokolle, Standard: daten (im Repo-Ordner).
                    Hier kann auch der gemeinsame Cloud-Ordner angegeben werden.
 
 Tasten im Aufnahmefenster:
     Leertaste  Bild speichern
-    n / b      nächstes / vorheriges Objekt (bzw. Umgebung bei "nichts")
+    n / b      nächste / vorherige Flasche (bzw. Umgebung bei "nichts")
     h l p a r g   Hintergrund / Licht / Perspektive / Abstand / Ausrichtung / Haltung
                auf den nächsten für diese Serie erlaubten Wert schalten
     z          letztes Bild dieser Sitzung löschen (Datei und Zeile im eigenen Protokoll)
@@ -116,11 +120,13 @@ def plan_fuer(klasse: str, serie: str) -> dict:
     return {m: eintrag.get(m, werte) for m, werte in ALLE_WERTE.items()} | {"ziel": eintrag["ziel"]}
 
 
+MAX_GEGENSTAENDE = 20  # pro Tag und Person
+
+
 def erlaubte_objekte(klasse: str, serie: str) -> list[str]:
-    """O01–O10 für S1–S8, O11/O12 zusätzlich in der Testsitzung. Bei 'nichts' Umgebungen U01–U12."""
-    buchstabe = "U" if klasse == "nichts" else "O"
-    nummern = range(1, 11) if re.fullmatch(r"S\d", serie) else range(1, 13)
-    return [f"{buchstabe}{n:02d}" for n in nummern]
+    """Gegenstände des Tages F01–F20, bei 'nichts' Umgebungen U01–U20 (Entscheidung vom 25.11.2026)."""
+    buchstabe = "U" if klasse == "nichts" else "F"
+    return [f"{buchstabe}{n:02d}" for n in range(1, MAX_GEGENSTAENDE + 1)]
 
 
 def serie_im_dateinamen(serie: str) -> str:
@@ -186,15 +192,20 @@ def protokoll_zeile_entfernen(protokoll: Path, dateiname: str) -> None:
         schreiber.writerows(z for z in zeilen if z["dateiname"] != dateiname)
 
 
-def zaehlen(basis: Path, klasse: str, serie: str) -> tuple[int, dict[str, int]]:
-    """Anzahl Bilder dieser Klasse und Serie über alle Personen-Protokolle und Anzahl je Objekt."""
+def zaehlen(basis: Path, klasse: str, serie: str, person: str = "", datum: str = "") -> tuple[int, dict[str, int]]:
+    """Anzahl Bilder dieser Klasse und Serie über alle Personen-Protokolle.
+
+    Die Anzahl je Gegenstand zählt nur die Bilder dieser Person an diesem Tag, weil F01 an jedem Tag
+    ein anderer Gegenstand sein kann.
+    """
     gesamt, je_objekt = 0, {}
     for protokoll in alle_protokolle(basis):
         with protokoll.open(newline="", encoding="utf-8") as f:
             for z in csv.DictReader(f):
                 if z["klasse"] == klasse and z["serie"] == serie:
                     gesamt += 1
-                    je_objekt[z["objekt"]] = je_objekt.get(z["objekt"], 0) + 1
+                    if z["person"] == person and z["datum"] == datum:
+                        je_objekt[z["objekt"]] = je_objekt.get(z["objekt"], 0) + 1
     return gesamt, je_objekt
 
 
@@ -250,7 +261,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
     plan = plan_fuer(args.klasse, args.serie)
     objekte = erlaubte_objekte(args.klasse, args.serie)
     if args.objekt and args.objekt not in objekte:
-        sys.exit(f"Objekt {args.objekt} ist in Serie {args.serie} nicht erlaubt. Erlaubt: {objekte[0]}–{objekte[-1]}")
+        sys.exit(f"Gegenstand {args.objekt} gibt es nicht. Erlaubt: {objekte[0]}–{objekte[-1]}")
     objekt_nr = objekte.index(args.objekt) if args.objekt else 0
     merkmale = {m: plan[m][0] for m in ALLE_WERTE}
     _, protokoll = ordner_fuer(args.datenordner, args.klasse, args.person)
@@ -279,7 +290,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
 
         objekt = objekte[objekt_nr]
         if bild_nr % 30 == 0:  # Protokolle der anderen etwa einmal pro Sekunde neu einlesen
-            gesamt, je_objekt = zaehlen(basis, args.klasse, args.serie)
+            gesamt, je_objekt = zaehlen(basis, args.klasse, args.serie, args.person, dt.date.today().isoformat())
         bild_nr += 1
         scharf = schaerfe(bild)
         anzeige = bild.copy()
@@ -287,7 +298,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
             x, y, b, h = logo_ausschnitt(anzeige)
             cv2.rectangle(anzeige, (x, y), (x + b, y + h), (0, 255, 255), 2)
         text(anzeige, 0, f"{args.klasse} | Serie {args.serie} | {objekt} | {PERSONEN[args.person]}")
-        text(anzeige, 1, f"Serie: {gesamt}/{plan['ziel']} Bilder | {objekt}: {je_objekt.get(objekt, 0)}",
+        text(anzeige, 1, f"Serie: {gesamt}/{plan['ziel']} Bilder | {objekt} heute: {je_objekt.get(objekt, 0)}",
              (0, 255, 0) if gesamt >= plan["ziel"] else (255, 255, 255))
         text(anzeige, 2, "  ".join(merkmale.values()))
         text(anzeige, 3, f"Schaerfe {scharf:.0f}" + ("  UNSCHARF" if scharf < SCHAERFE_GRENZE else ""),

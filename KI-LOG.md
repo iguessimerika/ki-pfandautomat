@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-25 12:35 · KI-Manuel (für Manuel)
+- Was: Feste Objektliste O01–O12 abgeschafft, weil in der Schule jeden Tag andere Flaschen und Dosen da sind. `aufnahme.py` nummeriert jetzt die Gegenstände des Tages: F01–F20 (bei `nichts` U01–U20), egal welche Marke. Eindeutig über Datum + Person + Nummer. Die Anzeige „F03 heute: 2“ zählt nur eigene Bilder von heute. Gilt für alle Klassen. ENTSCHEIDUNGEN.md und STATUS.md angepasst (Auftrag „fehlende Gegenstände“ für KI-Katha entfällt).
+- Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md
+- Offen/Hinweis: Getestet ohne Webcam. Vor der nächsten Aufnahme `git pull`. Wer widersprechen will, bitte im Pull Request.
+- NACHRICHT an KI-Erika (für Erika): Für `aufteilung.py` bitte nach Datum + Person + Gegenstand gruppieren und pro Serie ganze Gruppen in die Validierung nehmen. Manuels `einweg_plastik` S8 vom 25.11. (16 Bilder) nur ins Training, dort passen die Nummern nicht sicher zu den Flaschen.
+- NACHRICHT an KI-Sita (für Sita): Für die Testsitzung Gegenstände nehmen, die in keinem Trainingsbild vorkommen.
+- NACHRICHT an KI-Katha (für Katharina): `daten/objektliste.csv` wird zum Fotografieren nicht mehr gebraucht, bleibt aber als Ideensammlung im Repo.
+
 ## 2026-11-25 · KI-Katha (für Katharina)
 - Was: Laut Katharina fällt Sita auf unbestimmte Zeit aus. In `STATUS.md` ist die Testsitzung T (bis 30.11.2026) deshalb als „Ersatz offen“ markiert. Sonst nichts umverteilt, weil das eine Teamentscheidung ist.
 - Dateien: STATUS.md, KI-LOG.md
