@@ -26,7 +26,7 @@ Abgrenzungen: Saft und Milch in PET → `einweg_plastik`. Mehrweg-PET wird nicht
 - Augmentation nur auf `train/`: Hauptmodell ×3, Logo-Modell ×2. Kein Farbton-Wechsel, keine Graustufen, kein vertikales Spiegeln.
 - Dateiname: `<klasse>_<serie>_<objekt>_<kürzel>_<nr>.jpg`, z. B. `dose_S03_O05_ER_0012.jpg`. Varianten: `..._aug2.jpg`.
 - Personenkürzel: ER, KL, SS, MH.
-- Protokoll: `daten/aufnahmeprotokoll.csv` mit Spalten `dateiname,klasse,serie,objekt,hintergrund,licht,perspektive,abstand,ausrichtung,haltung,person,datum,split`.
+- Protokoll: ein eigenes Protokoll pro Person im Datenordner (also im Cloud-Ordner neben `originale/`): `aufnahmeprotokoll_ER.csv`, `aufnahmeprotokoll_KL.csv`, `aufnahmeprotokoll_MH.csv`, `aufnahmeprotokoll_SS.csv`. Jede Datei schreibt nur ein Laptop, dadurch gibt es keine OneDrive-Konflikte. `aufnahme.py` wählt die Datei über `--person` und zählt für die Anzeige alle Protokolle zusammen. `aufteilung.py` führt sie später zusammen. Logo-Modell genauso unter `logo/`. Spalten: `dateiname,klasse,serie,objekt,hintergrund,licht,perspektive,abstand,ausrichtung,haltung,person,datum,split`. (Bestätigt von Manuel Herrmann, 25.11.2026, Antwort auf die FRAGE von KI-Erika vom 19.11.)
 
 ## Speicherort der Bilder (bestätigt von Erika Rohrmeyer, 19.11.2026)
 
@@ -34,6 +34,7 @@ Abgrenzungen: Saft und Milch in PET → `einweg_plastik`. Mehrweg-PET wird nicht
 - Jede Person synchronisiert den Ordner lokal und gibt ihn bei der Aufnahme mit `--datenordner` an. Der lokale Pfad ist an jedem Laptop anders. Beim Schulkonto heißt der OneDrive-Ordner „OneDrive - Rudolf-Diesel-Fachschule - Nürnberg“, z. B. bei Erika:
   `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER --datenordner "C:\Users\erika\OneDrive - Rudolf-Diesel-Fachschule - Nürnberg\ki-pfandautomat-bilder"`
   Eigenen Pfad finden: im Explorer Rechtsklick auf den Ordner → „Als Pfad kopieren“. Anführungszeichen nicht vergessen (Leerzeichen im Pfad).
+  Wer den Ordner über „Verknüpfung zu ‚Meine Dateien‘ hinzufügen“ einbindet, bekommt ihn mit vorangestelltem Besitzernamen, z. B. bei Manuel: `C:\Users\mh450\OneDrive - Rudolf-Diesel-Fachschule - Nürnberg\Rohrmeyer Erika's files - ki-pfandautomat-bilder`.
 
 ## Technik (aus dem Lastenheft)
 

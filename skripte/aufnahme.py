@@ -3,6 +3,8 @@ aufnahme.py – Webcam-Aufnahme für den Bilddatensatz Pfandautomat.
 
 Zeigt das Live-Bild der Webcam. Pro Tastendruck wird genau ein Bild gespeichert,
 automatisch benannt und im Aufnahmeprotokoll eingetragen (siehe ENTSCHEIDUNGEN.md).
+Jede Person hat ein eigenes Protokoll aufnahmeprotokoll_<Kürzel>.csv im Datenordner, damit es im
+gemeinsamen Cloud-Ordner keine Schreibkonflikte gibt. Der Zähler im Bild zählt alle Protokolle zusammen.
 
 Start (Beispiel, aus dem Repo-Ordner):
     python skripte/aufnahme.py --klasse dose --serie S3 --person MH
@@ -14,7 +16,7 @@ Optionen:
     --person       ER | KL | SS | MH
     --objekt       Start-Objekt, z. B. O01 (bei "nichts": U01). Standard: erstes erlaubtes
     --kamera       Index der Webcam, Standard 0
-    --datenordner  Ordner für Bilder und Protokoll, Standard: daten (im Repo-Ordner).
+    --datenordner  Ordner für Bilder und Protokolle, Standard: daten (im Repo-Ordner).
                    Hier kann auch der gemeinsame Cloud-Ordner angegeben werden.
 
 Tasten im Aufnahmefenster:
@@ -22,7 +24,7 @@ Tasten im Aufnahmefenster:
     n / b      nächstes / vorheriges Objekt (bzw. Umgebung bei "nichts")
     h l p a r g   Hintergrund / Licht / Perspektive / Abstand / Ausrichtung / Haltung
                auf den nächsten für diese Serie erlaubten Wert schalten
-    z          letztes Bild dieser Sitzung löschen (Datei und Protokollzeile)
+    z          letztes Bild dieser Sitzung löschen (Datei und Zeile im eigenen Protokoll)
     q / Esc    beenden
 
 Hinweis: Die Aufteilung in train / val / test macht später aufteilung.py.
@@ -131,10 +133,20 @@ def split_fuer(serie: str) -> str:
     return "test" if serie in ("T", "LT") else ("vortest" if serie == "V" else "offen")
 
 
-def ordner_fuer(datenordner: Path, klasse: str) -> tuple[Path, Path]:
-    """Gibt (Bildordner, Protokolldatei) zurück."""
-    basis = datenordner / "logo" if ist_logo(klasse) else datenordner
-    return basis / "originale" / klasse, basis / "aufnahmeprotokoll.csv"
+def basis_fuer(datenordner: Path, klasse: str) -> Path:
+    """Ordner, in dem Bilder (originale/) und Protokolle liegen. Logo-Modell getrennt unter logo/."""
+    return datenordner / "logo" if ist_logo(klasse) else datenordner
+
+
+def ordner_fuer(datenordner: Path, klasse: str, person: str) -> tuple[Path, Path]:
+    """Gibt (Bildordner, eigene Protokolldatei der Person) zurück."""
+    basis = basis_fuer(datenordner, klasse)
+    return basis / "originale" / klasse, basis / f"aufnahmeprotokoll_{person}.csv"
+
+
+def alle_protokolle(basis: Path) -> list[Path]:
+    """Alle Personen-Protokolle (aufnahmeprotokoll_ER.csv usw.), ohne OneDrive-Konfliktkopien."""
+    return sorted(p for p in basis.glob("aufnahmeprotokoll_*.csv") if p.stem.split("_", 1)[1] in PERSONEN)
 
 
 def naechste_nummer(bildordner: Path, praefix: str) -> int:
@@ -174,10 +186,10 @@ def protokoll_zeile_entfernen(protokoll: Path, dateiname: str) -> None:
         schreiber.writerows(z for z in zeilen if z["dateiname"] != dateiname)
 
 
-def zaehlen(protokoll: Path, klasse: str, serie: str) -> tuple[int, dict[str, int]]:
-    """Anzahl Bilder dieser Klasse und Serie (alle Personen) und Anzahl je Objekt."""
+def zaehlen(basis: Path, klasse: str, serie: str) -> tuple[int, dict[str, int]]:
+    """Anzahl Bilder dieser Klasse und Serie über alle Personen-Protokolle und Anzahl je Objekt."""
     gesamt, je_objekt = 0, {}
-    if protokoll.exists():
+    for protokoll in alle_protokolle(basis):
         with protokoll.open(newline="", encoding="utf-8") as f:
             for z in csv.DictReader(f):
                 if z["klasse"] == klasse and z["serie"] == serie:
@@ -200,7 +212,7 @@ def logo_ausschnitt(bild: np.ndarray) -> tuple[int, int, int, int]:
 def speichern(bild: np.ndarray, datenordner: Path, klasse: str, serie: str, objekt: str,
               person: str, merkmale: dict[str, str]) -> Path:
     """Speichert ein Bild mit Dateinamen nach Schema und schreibt die Protokollzeile."""
-    bildordner, protokoll = ordner_fuer(datenordner, klasse)
+    bildordner, protokoll = ordner_fuer(datenordner, klasse, person)
     bildordner.mkdir(parents=True, exist_ok=True)
     praefix = f"{klasse}_{serie_im_dateinamen(serie)}_{objekt}_{person}"
     pfad = bildordner / f"{praefix}_{naechste_nummer(bildordner, praefix):04d}.jpg"
@@ -241,9 +253,14 @@ def aufnehmen(args: argparse.Namespace) -> None:
         sys.exit(f"Objekt {args.objekt} ist in Serie {args.serie} nicht erlaubt. Erlaubt: {objekte[0]}–{objekte[-1]}")
     objekt_nr = objekte.index(args.objekt) if args.objekt else 0
     merkmale = {m: plan[m][0] for m in ALLE_WERTE}
-    _, protokoll = ordner_fuer(args.datenordner, args.klasse)
+    _, protokoll = ordner_fuer(args.datenordner, args.klasse, args.person)
+    basis = basis_fuer(args.datenordner, args.klasse)
+    if (basis / "aufnahmeprotokoll.csv").exists():
+        print("Hinweis: Im Datenordner liegt noch ein altes aufnahmeprotokoll.csv ohne Kürzel. Es wird nicht "
+              "mitgezählt. Bitte in aufnahmeprotokoll_<Kürzel>.csv umbenennen (siehe ENTSCHEIDUNGEN.md).")
     sitzung: list[Path] = []
     meldung, meldung_farbe = "", (255, 255, 255)
+    bild_nr, gesamt, je_objekt = 0, 0, {}
 
     kamera = kamera_oeffnen(args.kamera)
     fenster = "Aufnahme Pfandautomat"
@@ -261,7 +278,9 @@ def aufnehmen(args: argparse.Namespace) -> None:
             bild = cv2.resize(bild, (BILD_BREITE, BILD_HOEHE))
 
         objekt = objekte[objekt_nr]
-        gesamt, je_objekt = zaehlen(protokoll, args.klasse, args.serie)
+        if bild_nr % 30 == 0:  # Protokolle der anderen etwa einmal pro Sekunde neu einlesen
+            gesamt, je_objekt = zaehlen(basis, args.klasse, args.serie)
+        bild_nr += 1
         scharf = schaerfe(bild)
         anzeige = bild.copy()
         if ist_logo(args.klasse):
@@ -283,6 +302,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
         if taste == ord(" "):
             pfad = speichern(bild, args.datenordner, args.klasse, args.serie, objekt, args.person, merkmale)
             sitzung.append(pfad)
+            bild_nr = 0
             meldung, meldung_farbe = f"Gespeichert: {pfad.name}", (0, 255, 0)
             if scharf < SCHAERFE_GRENZE:
                 meldung, meldung_farbe = "Gespeichert, aber unscharf: mit z loeschen?", (0, 165, 255)
@@ -299,6 +319,7 @@ def aufnehmen(args: argparse.Namespace) -> None:
                 letzte = sitzung.pop()
                 letzte.unlink(missing_ok=True)
                 protokoll_zeile_entfernen(protokoll, letzte.name)
+                bild_nr = 0
                 meldung, meldung_farbe = f"Geloescht: {letzte.name}", (0, 165, 255)
             else:
                 meldung, meldung_farbe = "In dieser Sitzung noch kein Bild gespeichert", (0, 165, 255)
