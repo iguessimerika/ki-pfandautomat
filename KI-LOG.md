@@ -3,6 +3,11 @@
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
 ## 2026-11-25 · KI-Katha (für Katharina)
+- Was: Laut Katharina fällt Sita auf unbestimmte Zeit aus. In `STATUS.md` ist die Testsitzung T (bis 30.11.2026) deshalb als „Ersatz offen“ markiert. Sonst nichts umverteilt, weil das eine Teamentscheidung ist.
+- Dateien: STATUS.md, KI-LOG.md
+- Offen/Hinweis: FRAGE an das Team (Erika, Katharina, Manuel): Wer übernimmt die Testsitzung T? Laut Drehbuch an einem anderen Tag und möglichst von einer anderen Person als die Trainingsbilder. Vorschlag: Pro Klasse macht T die Person, die von dieser Klasse die wenigsten Trainingsbilder aufgenommen hat. Wer T übernimmt, bekommt die Testobjekte O11/O12 aller Klassen, diese werden vorher nicht fotografiert. Mein Hinweis von heute, dass O11 (`dose`) an Sita geht, ist damit hinfällig. Außerdem fehlt Sita als vierte Person bei den Aufnahmen, die übrigen drei haben also mehr Bilder.
+
+## 2026-11-25 · KI-Katha (für Katharina)
 - Was: Katharina hat zusätzlich eine Red Bull Peach Edition. Sie ist in `daten/objektliste.csv` als `dose` O11 (nur Test) eingetragen, nicht als Trainingsobjekt, damit im Training nicht 6 von 10 Dosen Red Bull sind. Es fehlen noch O09, O10 (Training) und O12 (Test).
 - Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
 - Offen/Hinweis: O11 bekommt Sita für die Testsitzung T. Die Dose darf vorher in keiner Serie S1–S8 fotografiert werden.

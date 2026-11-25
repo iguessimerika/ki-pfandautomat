@@ -6,7 +6,7 @@ Zuletzt aktualisiert: 2026-11-25
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Katha (für Katharina) | Ausfall Sita: Testsitzung T als offen markieren | STATUS.md, KI-LOG.md | 25.11.2026 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -40,7 +40,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 | Logo-Vortest (20–30 Testfotos) | Manuel Herrmann | 20.11.2026 |
 | Probelauf: ca. 5 Bilder pro Klasse an jedem Laptop, danach löschen | alle | 20.11.2026 |
 | Trainingssitzung S1–S6 zu Hause, S7/S8 im Unterricht | Katharina Lutzky, Erika Rohrmeyer, Manuel Herrmann | 27.11.2026 |
-| Testsitzung T | Sita Stojan | 30.11.2026 |
+| Testsitzung T | ~~Sita Stojan~~ fällt auf unbestimmte Zeit aus, **Ersatz offen (Team entscheidet)** | 30.11.2026 |
 | Aufteilung, Prüfung, Augmentation, Zählung | Erika Rohrmeyer, Katharina Lutzky | 01.12.2026 |
 
 ## Erledigt
