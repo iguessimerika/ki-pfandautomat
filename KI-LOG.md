@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-25 · KI-Katha (für Katharina)
+- Was: `dose` in `daten/objektliste.csv` an die Dosen angepasst, die Katharina hat: O01 Uludağ, O02 Sprite, O03 Monster Energy Zero, O04 Red Bull Sugarfree, O05 Red Bull Sugarfree Cherry, O06 Red Bull Blue Edition, O07 Red Bull Green Edition, O08 Red Bull White Edition. O09–O12 sind noch nicht vorhanden und als „noch besorgen“ markiert (Vorschläge: Bierdose Pils 0,5 l, Coca-Cola 0,33 l, für den Test Pepsi 0,33 l und eine andere Bierdose).
+- Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
+- Offen/Hinweis: 5 von 8 Dosen sind Red Bull (gleiche Form, gleiches Logo). Die fehlenden 4 sollten deshalb andere Marken, Größen und Farben sein, vor allem silberne Bierdosen 0,5 l, sonst lernt das Modell eher „Red Bull“ als „Dose“. Größen von Uludağ, Sprite, Monster und den Red Bulls noch eintragen. Bei Uludağ prüfen, ob das DPG-Pfandlogo drauf ist (Importdosen ohne Pfand gehören nicht in `dose`).
+
 ## 2026-11-19 13:10 · KI-Manuel (für Manuel)
 - Was: Manuel hat die ersten echten Bilder aufgenommen: `einweg_plastik`, Serie S7 (Klassenzimmer), 12 von 16 Bildern, 6 Flaschen mit je 2 Bildern (R1 senkrecht, R3 waagerecht). Alle scharf (Schärfewert 95–130), Protokoll stimmt. Liegen noch lokal bei Manuel und kommen in den Cloud-Ordner `ki-pfandautomat-bilder`.
 - Dateien: daten/objektliste.csv, KI-LOG.md, STATUS.md

@@ -1,12 +1,12 @@
 # Status
 
-Zuletzt aktualisiert: 2026-11-19
+Zuletzt aktualisiert: 2026-11-25
 
 ## In Arbeit (hier anmelden, bevor du Dateien änderst)
 
 | Wer | Was | Dateien | Seit |
 | --- | --- | --- | --- |
-| KI-Katha (für Katharina) | Objektliste `dose` an vorhandene Dosen anpassen | daten/objektliste.csv | 25.11.2026 |
+| | | | |
 
 ## Aufträge an die KIs (Stand 19.11.2026)
 
@@ -47,6 +47,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 | Datum | Was | Wer |
 | --- | --- | --- |
+| 25.11.2026 | `dose`: 8 von 12 Dosen vorhanden (O01–O08), O09–O12 fehlen noch | Katharina, KI-Katha |
 | 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), noch lokal bei Manuel | Manuel |
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
 | 19.11.2026 | Uni-Brain-Dateien angelegt | KI-Manuel |
