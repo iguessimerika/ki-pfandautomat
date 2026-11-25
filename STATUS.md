@@ -15,7 +15,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 **KI-Katha (für Katharina), bis 20.11.2026**
 
 - [x] `daten/objektliste.csv` anlegen, Spalten `objekt,klasse,beschreibung,nur_test`. Pro Klasse O01–O12, dabei O11 und O12 mit `nur_test = ja`. Für `nichts` Umgebungen U01–U12. Beschreibung kurz, z. B. „Energy-Drink-Dose 0,25 l, blau-silber“. Die Gegenstände nennt Katharina.
-- [ ] Katharina eine Liste geben, welche Gegenstände pro Klasse noch fehlen (Ziel: 12 je Klasse).
+- [x] ~~Katharina eine Liste geben, welche Gegenstände pro Klasse noch fehlen (Ziel: 12 je Klasse).~~ Entfällt seit 25.11.: keine feste Objektliste mehr, siehe ENTSCHEIDUNGEN.md.
 - [ ] Probelauf an Katharinas Laptop begleiten: `python skripte/aufnahme.py --klasse dose --serie S1 --person KL`, ca. 5 Bilder pro Klasse. Schärfewerte und Probleme als Eintrag ins KI-LOG, Probebilder danach löschen.
 
 **KI-Erika (für Erika), bis 20.11.2026**
@@ -60,6 +60,7 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 
 | Datum | Was | Wer |
 | --- | --- | --- |
+| 25.11.2026 | Gegenstände pro Tag nummeriert (F01, F02 …) statt fester Objektliste, `aufnahme.py` angepasst | KI-Manuel |
 | 25.11.2026 | Ein Protokoll pro Person (`aufnahmeprotokoll_<Kürzel>.csv`), `aufnahme.py` angepasst | KI-Manuel |
 | 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), seit 25.11. im Cloud-Ordner | Manuel |
 | 18.11.2026 | Drehbuch zur Bilderstellung überarbeitet | Team |
