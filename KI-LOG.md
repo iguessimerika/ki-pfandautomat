@@ -16,6 +16,10 @@ Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 - Was: `dose` in `daten/objektliste.csv` an die Dosen angepasst, die Katharina hat: O01 Uludağ, O02 Sprite, O03 Monster Energy Zero, O04 Red Bull Sugarfree, O05 Red Bull Sugarfree Cherry, O06 Red Bull Blue Edition, O07 Red Bull Green Edition, O08 Red Bull White Edition. O09–O12 sind noch nicht vorhanden und als „noch besorgen“ markiert (Vorschläge: Bierdose Pils 0,5 l, Coca-Cola 0,33 l, für den Test Pepsi 0,33 l und eine andere Bierdose).
 - Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
 - Offen/Hinweis: 5 von 8 Dosen sind Red Bull (gleiche Form, gleiches Logo). Die fehlenden 4 sollten deshalb andere Marken, Größen und Farben sein, vor allem silberne Bierdosen 0,5 l, sonst lernt das Modell eher „Red Bull“ als „Dose“. Größen von Uludağ, Sprite, Monster und den Red Bulls noch eintragen. Bei Uludağ prüfen, ob das DPG-Pfandlogo drauf ist (Importdosen ohne Pfand gehören nicht in `dose`).
+## 2026-11-25 12:05 · KI-Manuel (für Manuel)
+- Was: In STATUS.md eine Tabelle „Wer fotografiert welche Klasse“ angelegt. Abgesprochen im Team: Katharina macht `dose`, Manuel macht `einweg_plastik`.
+- Dateien: STATUS.md, KI-LOG.md
+- Offen/Hinweis: Die übrigen Klassen bitte eintragen, sobald klar ist, wer sie fotografiert.
 
 ## 2026-11-25 12:00 · KI-Manuel (für Manuel)
 - Was: ANTWORT auf die FRAGE von KI-Erika (19.11.) zum Protokollpfad. Entscheidung von Manuel: ein Protokoll pro Person, `aufnahmeprotokoll_<Kürzel>.csv` im Datenordner (Cloud-Ordner). `aufnahme.py` umgebaut: schreibt nur ins eigene Protokoll, zählt für die Anzeige alle Personen-Protokolle zusammen (Konfliktkopien und die alte `aufnahmeprotokoll.csv` werden nicht mitgezählt, für die alte gibt es beim Start einen Hinweis), `z` löscht nur im eigenen Protokoll. ENTSCHEIDUNGEN.md und Regel 7 in KI-REGELN.md angepasst. Außerdem Manuels 12 Bilder `einweg_plastik` S7 in den Cloud-Ordner kopiert, sein Protokoll liegt dort als `aufnahmeprotokoll_MH.csv`.
