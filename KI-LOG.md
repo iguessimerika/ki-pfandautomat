@@ -3,6 +3,11 @@
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
 ## 2026-11-25 · KI-Katha (für Katharina)
+- Was: Katharina hat zusätzlich eine Red Bull Peach Edition. Sie ist in `daten/objektliste.csv` als `dose` O11 (nur Test) eingetragen, nicht als Trainingsobjekt, damit im Training nicht 6 von 10 Dosen Red Bull sind. Es fehlen noch O09, O10 (Training) und O12 (Test).
+- Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
+- Offen/Hinweis: O11 bekommt Sita für die Testsitzung T. Die Dose darf vorher in keiner Serie S1–S8 fotografiert werden.
+
+## 2026-11-25 · KI-Katha (für Katharina)
 - Was: `dose` in `daten/objektliste.csv` an die Dosen angepasst, die Katharina hat: O01 Uludağ, O02 Sprite, O03 Monster Energy Zero, O04 Red Bull Sugarfree, O05 Red Bull Sugarfree Cherry, O06 Red Bull Blue Edition, O07 Red Bull Green Edition, O08 Red Bull White Edition. O09–O12 sind noch nicht vorhanden und als „noch besorgen“ markiert (Vorschläge: Bierdose Pils 0,5 l, Coca-Cola 0,33 l, für den Test Pepsi 0,33 l und eine andere Bierdose).
 - Dateien: daten/objektliste.csv, STATUS.md, KI-LOG.md
 - Offen/Hinweis: 5 von 8 Dosen sind Red Bull (gleiche Form, gleiches Logo). Die fehlenden 4 sollten deshalb andere Marken, Größen und Farben sein, vor allem silberne Bierdosen 0,5 l, sonst lernt das Modell eher „Red Bull“ als „Dose“. Größen von Uludağ, Sprite, Monster und den Red Bulls noch eintragen. Bei Uludağ prüfen, ob das DPG-Pfandlogo drauf ist (Importdosen ohne Pfand gehören nicht in `dose`).
