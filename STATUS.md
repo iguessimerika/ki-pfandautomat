@@ -22,7 +22,7 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 
 - [x] Mit Erika den gemeinsamen Cloud-Ordner für die Bilder festlegen. Den Pfad nach Erikas Bestätigung in `ENTSCHEIDUNGEN.md` eintragen. Er wird beim Aufnehmen mit `--datenordner` angegeben.
 - [x] Erika daran erinnern, Katharina, Sita und Manuel im Repo als Collaborators einzuladen (GitHub → Settings → Collaborators).
-- [ ] Probelauf an Erikas Laptop begleiten: `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER`, ca. 5 Bilder pro Klasse. Ergebnis ins KI-LOG, Probebilder danach löschen.
+- [x] Probelauf an Erikas Laptop begleiten: `python skripte/aufnahme.py --klasse mehrweg --serie S1 --person ER`, ca. 5 Bilder pro Klasse. Ergebnis ins KI-LOG, Probebilder danach löschen. (25.11., Probebilder und altes Protokoll gelöscht)
 - [ ] Danach (bis 01.12.2026): `skripte/aufteilung.py` planen, siehe Drehbuch Abschnitt 5 (Validierung nicht zufällig, sondern pro Serie die Bilder eines Objekts, das in dieser Serie nicht im Training liegt).
 
 **KI-Manuel (für Manuel), bis 20.11.2026**
@@ -38,10 +38,10 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 | --- | --- | --- |
 | `dose` | Katharina Lutzky | offen |
 | `einweg_plastik` | Manuel Herrmann | S7: 12 von 16 |
-| `bierflasche` | ? | offen |
-| `mehrweg` | ? (Erika hat 20 Bilder S1, Probelauf oder echt?) | offen |
-| `kein_pfand` | ? | offen |
-| `nichts` | ? | offen |
+| `bierflasche` | Erika Rohrmeyer (S1–S6, laut Drehbuch) | offen |
+| `mehrweg` | Erika Rohrmeyer (S1–S6, laut Drehbuch) | offen (die 20 Bilder S1 waren der Probelauf, gelöscht) |
+| `kein_pfand` | S1–S3 Erika Rohrmeyer, S4–S6 Katharina Lutzky (Vorschlag von Erika, Bestätigung von Katharina offen) | offen |
+| `nichts` | S1–S3 Erika Rohrmeyer, S4–S6 Katharina Lutzky (Vorschlag von Erika, Bestätigung von Katharina offen) | offen |
 
 ## Offen (laut Zeitplan im Drehbuch)
 
