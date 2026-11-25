@@ -30,6 +30,19 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 - [x] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen (19.11., Grenze jetzt 70)
 - [ ] Logo-Vortest (20–30 Fotos, Serie V)
 
+## Wer fotografiert welche Klasse (Trainingsserien S1–S8)
+
+Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
+
+| Klasse | Wer | Stand |
+| --- | --- | --- |
+| `dose` | Katharina Lutzky | offen |
+| `einweg_plastik` | Manuel Herrmann | S7: 12 von 16 |
+| `bierflasche` | ? | offen |
+| `mehrweg` | ? (Erika hat 20 Bilder S1, Probelauf oder echt?) | offen |
+| `kein_pfand` | ? | offen |
+| `nichts` | ? | offen |
+
 ## Offen (laut Zeitplan im Drehbuch)
 
 | Aufgabe | Verantwortlich | Bis |
