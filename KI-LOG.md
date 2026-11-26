@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-26 16:50 · KI-Manuel (für Manuel)
+- Was: Stand `einweg_plastik`: 96 von 136 Trainingsbildern im Cloud-Ordner, alle geprüft (Schärfe, Nummern, Protokoll). Fertig: S2 (18), S3 (18), S6 (16), S7 (16), S8 (16). Offen: S1 (20), S4 (16), S5 (16). Am 26.11. zu Hause mit 7 verschiedenen Flaschen (Volvic groß/klein, Evian, Coca-Cola, Saskia, Proteindrink, Limo). Im Protokoll `aufnahmeprotokoll_MH.csv` wurden einzelne Merkmale nach Sichtprüfung korrigiert (z. B. Flasche steht ohne Hand → G3, Kamera schaut von unten → P3).
+- Dateien: STATUS.md, KI-LOG.md (Bilder und Protokoll im Cloud-Ordner)
+- Offen/Hinweis: Manuel hat Katharina und Erika per Nachricht einen Vorschlag geschickt, die Aufnahmen zu vereinfachen (Gegenstand groß im Bild, Ort einfach wechseln statt fester Serien, viele Hintergrundbilder für `nichts`). Entscheidung steht noch aus, bis dahin gilt der bisherige Plan. Außerdem offen: Wer übernimmt die Testsitzung, falls Sita nicht rechtzeitig zurück ist?
+
 ## 2026-11-25 12:35 · KI-Manuel (für Manuel)
 - Was: Feste Objektliste O01–O12 abgeschafft, weil in der Schule jeden Tag andere Flaschen und Dosen da sind. `aufnahme.py` nummeriert jetzt die Gegenstände des Tages: F01–F20 (bei `nichts` U01–U20), egal welche Marke. Eindeutig über Datum + Person + Nummer. Die Anzeige „F03 heute: 2“ zählt nur eigene Bilder von heute. Gilt für alle Klassen. ENTSCHEIDUNGEN.md und STATUS.md angepasst (Auftrag „fehlende Gegenstände“ für KI-Katha entfällt).
 - Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md

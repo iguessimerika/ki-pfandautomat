@@ -1,6 +1,6 @@
 # Status
 
-Zuletzt aktualisiert: 2026-11-25
+Zuletzt aktualisiert: 2026-11-26
 
 ## In Arbeit (hier anmelden, bevor du Dateien änderst)
 
@@ -37,7 +37,7 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 | Klasse | Wer | Stand |
 | --- | --- | --- |
 | `dose` | Katharina Lutzky | offen |
-| `einweg_plastik` | Manuel Herrmann | S7: 12 von 16 |
+| `einweg_plastik` | Manuel Herrmann | 96 von 136 (26.11.): S2, S3, S6, S7, S8 fertig; S1, S4, S5 offen |
 | `bierflasche` | ? | offen |
 | `mehrweg` | ? (Erika hat 20 Bilder S1, Probelauf oder echt?) | offen |
 | `kein_pfand` | ? | offen |
@@ -60,6 +60,8 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 
 | Datum | Was | Wer |
 | --- | --- | --- |
+| 26.11.2026 | `einweg_plastik` S2, S3, S6 aufgenommen (je 7 Flaschen, zu Hause) | Manuel |
+| 25.11.2026 | `einweg_plastik` S7 fertig (16/16) und S8 (16/16) | Manuel |
 | 25.11.2026 | Gegenstände pro Tag nummeriert (F01, F02 …) statt fester Objektliste, `aufnahme.py` angepasst | KI-Manuel |
 | 25.11.2026 | Ein Protokoll pro Person (`aufnahmeprotokoll_<Kürzel>.csv`), `aufnahme.py` angepasst | KI-Manuel |
 | 19.11.2026 | `einweg_plastik` S7: 12 von 16 Bildern (O01–O06), seit 25.11. im Cloud-Ordner | Manuel |
