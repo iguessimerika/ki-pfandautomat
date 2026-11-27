@@ -1,6 +1,6 @@
 # Status
 
-Zuletzt aktualisiert: 2026-11-26
+Zuletzt aktualisiert: 2026-11-27
 
 ## In Arbeit (hier anmelden, bevor du Dateien änderst)
 
@@ -30,14 +30,14 @@ Jede KI arbeitet die Aufträge mit ihrem Kürzel ab, meldet sich vorher unter �
 - [x] Probelauf an Manuels Laptop, Schärfegrenze in `aufnahme.py` anpassen (19.11., Grenze jetzt 70)
 - [ ] Logo-Vortest (20–30 Fotos, Serie V)
 
-## Wer fotografiert welche Klasse (Trainingsserien S1–S8)
+## Wer fotografiert welche Klasse (Ziel: 136 Trainingsbilder pro Klasse, einfacher Modus seit 27.11.)
 
 Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 
 | Klasse | Wer | Stand |
 | --- | --- | --- |
 | `dose` | Katharina Lutzky | offen |
-| `einweg_plastik` | Manuel Herrmann | 96 von 136 (26.11.): S2, S3, S6, S7, S8 fertig; S1, S4, S5 offen |
+| `einweg_plastik` | Manuel Herrmann | 96 von 136, Rest (40) im einfachen Modus |
 | `bierflasche` | ? | offen |
 | `mehrweg` | ? (Erika hat 20 Bilder S1, Probelauf oder echt?) | offen |
 | `kein_pfand` | ? | offen |
@@ -60,6 +60,7 @@ Damit nichts doppelt fotografiert wird. Bitte ergänzen, sobald es feststeht.
 
 | Datum | Was | Wer |
 | --- | --- | --- |
+| 27.11.2026 | Einfacher Aufnahmemodus in `aufnahme.py`, Anpassungen dokumentiert (`dokumente/Anpassungen_Drehbuch.md`) | KI-Manuel |
 | 26.11.2026 | `einweg_plastik` S2, S3, S6 aufgenommen (je 7 Flaschen, zu Hause) | Manuel |
 | 25.11.2026 | `einweg_plastik` S7 fertig (16/16) und S8 (16/16) | Manuel |
 | 25.11.2026 | Gegenstände pro Tag nummeriert (F01, F02 …) statt fester Objektliste, `aufnahme.py` angepasst | KI-Manuel |

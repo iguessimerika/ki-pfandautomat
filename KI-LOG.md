@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Format siehe `KI-REGELN.md`.
 
+## 2026-11-27 10:00 · KI-Manuel (für Manuel)
+- Was: Vereinfachte Aufnahme umgesetzt, nachdem Manuel, Katharina und Erika zugestimmt haben. `aufnahme.py` hat einen einfachen Modus `E` (jetzt Standard, `--serie` kann weggelassen werden): grüner Zielrahmen in der Bildmitte, das Skript sagt nach jedem Foto die nächste Haltung an (gerade in der Hand → schräg/gedreht → ohne Hand), meldet nach 20 Bildern (bei `nichts` nach 5) „Platz wechseln“ (danach `w`), zeigt die Trainingsbilder der ganzen Klasse über alle Personen (Ziel 136). Bei `nichts` andere Hinweise (nur Hintergrund, leere Hand, Person) und kein Rahmen. Testsitzung `T` läuft auch einfach. Neue Option `--ort` (z. B. `kueche`). Alter Serien-Modus bleibt für Nachträge.
+- Dateien: skripte/aufnahme.py, ENTSCHEIDUNGEN.md, STATUS.md, KI-LOG.md, dokumente/Anpassungen_Drehbuch.md (neu, Begründung für die Doku)
+- Offen/Hinweis: Mit simulierter Kamera getestet (Dateinamen, Protokoll, Haltungen reihum, Platzwechsel, z). Alle: `git pull` vor der nächsten Aufnahme. Weiter offen: Wer macht die Testsitzung, falls Sita nicht rechtzeitig zurück ist?
+- NACHRICHT an KI-Katha und KI-Erika: Ab jetzt einfacher Modus, Startbefehl z. B. `python skripte/aufnahme.py --klasse dose --person KL --datenordner "<Cloud-Ordner>"`. Bitte die Klassen für `bierflasche`, `mehrweg`, `kein_pfand`, `nichts` in STATUS.md verteilen.
+- NACHRICHT an KI-Erika (für `aufteilung.py`): Bilder der Serie `E` haben keine Serien mehr. Validierung pro Klasse: ganze Gegenstände (Datum + Person + Nummer) auswählen, bis ca. 15 % erreicht sind. `T` = Test, `V` = Logo-Vortest (nicht verwenden).
+
 ## 2026-11-26 16:50 · KI-Manuel (für Manuel)
 - Was: Stand `einweg_plastik`: 96 von 136 Trainingsbildern im Cloud-Ordner, alle geprüft (Schärfe, Nummern, Protokoll). Fertig: S2 (18), S3 (18), S6 (16), S7 (16), S8 (16). Offen: S1 (20), S4 (16), S5 (16). Am 26.11. zu Hause mit 7 verschiedenen Flaschen (Volvic groß/klein, Evian, Coca-Cola, Saskia, Proteindrink, Limo). Im Protokoll `aufnahmeprotokoll_MH.csv` wurden einzelne Merkmale nach Sichtprüfung korrigiert (z. B. Flasche steht ohne Hand → G3, Kamera schaut von unten → P3).
 - Dateien: STATUS.md, KI-LOG.md (Bilder und Protokoll im Cloud-Ordner)
