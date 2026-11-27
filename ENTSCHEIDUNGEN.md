@@ -17,10 +17,24 @@ Optional Logo-Modell: `dpg_logo`, `mehrweg_logo`, `kein_logo`.
 
 Abgrenzungen: Saft und Milch in PET → `einweg_plastik`. Mehrweg-PET wird nicht aufgenommen. Grüne Bierflaschen sind nicht im Datensatz. Bügelflaschen → `mehrweg`.
 
+## Vereinfachte Aufnahme (ab 27.11.2026)
+
+Bestätigt von Manuel Herrmann, Katharina Lutzky und Erika Rohrmeyer (27.11.2026). Sita Stojan war nicht dabei. Begründung siehe `dokumente/Anpassungen_Drehbuch.md`.
+
+- Statt der 8 festen Serien gibt es den **einfachen Modus** (`--serie E`, Standard in `aufnahme.py`). Ziel: **136 Trainingsbilder pro Klasse**, alle Personen und Serien zusammen. Bereits aufgenommene Serien-Bilder (S1–S8) zählen mit.
+- **Gegenstand groß im Bild:** ca. 25–40 cm vor der Kamera, etwa so groß wie der grüne Rahmen in der Bildmitte.
+- **Haltungen reihum**, das Skript sagt sie an: gerade in der Hand → schräg oder gedreht in der Hand → ohne Hand (stehend oder liegend). Danach nächster Gegenstand.
+- **Platz wechseln:** spätestens nach 20 Bildern (bei `nichts` nach 5) Laptop woanders hinstellen oder umdrehen, im Skript `w` drücken. Ziel sind möglichst viele verschiedene Hintergründe, ohne etwas aufzubauen.
+- **Licht:** wird nicht mehr gezielt eingerichtet, Helligkeitsunterschiede kommen über die Augmentation.
+- **`nichts`:** viele kurze Aufnahmen in möglichst vielen Räumen: nur Hintergrund, leere Hand, Person ohne Gegenstand.
+- **Vielfalt:** ca. 10–15 verschiedene Gegenstände pro Klasse, Marke egal, passend zur Klasse.
+- **Testsitzung** (`--serie T`, 24 Bilder pro Klasse) läuft ebenfalls im einfachen Modus, mit Gegenständen, die in keinem Trainingsbild vorkommen. Wer sie übernimmt, wenn Sita nicht rechtzeitig zurück ist: noch offen.
+- Im Protokoll stehen bei `E`/`T` nur noch Platz (Spalte `hintergrund`), Ausrichtung und Haltung, Licht/Perspektive/Abstand sind „-“.
+
 ## Bilddaten
 
 - Aufnahme mit `aufnahme.py` (OpenCV) über die Laptop-Webcams, 640 × 480 Pixel, JPG.
-- 160 Originale pro Klasse: Serien S1–S8 (136 Bilder) + Testsitzung T (24 Bilder).
+- 160 Originale pro Klasse: 136 Trainings-/Validierungsbilder (einfacher Modus `E`, ältere Bilder aus S1–S8) + Testsitzung T (24 Bilder).
 - Gegenstände pro Aufnahmetag (ab 25.11.2026, Abweichung vom Drehbuch): Keine feste Liste mehr, weil in der Schule immer andere Flaschen und Dosen da sind. Wer aufnimmt, nummeriert die Gegenstände, die er an diesem Tag vor sich hat: F01, F02 … (bei `nichts` Umgebungen U01, U02 …), egal welche Marke. Eindeutig ist ein Gegenstand über Datum + Person + Nummer (stehen im Protokoll). Innerhalb eines Tages bleibt F01 derselbe Gegenstand. Pro Serie möglichst viele verschiedene Gegenstände.
 - Validierung: `aufteilung.py` gruppiert nach Datum + Person + Gegenstand und nimmt pro Serie die Bilder ganzer Gegenstände in die Validierung, nie einzelne Bilder.
 - Testsitzung: Sita nimmt Gegenstände, die in keinem Trainingsbild vorkommen. Da die Flaschen sowieso wechseln, reicht es, keine bereits fotografierte Flasche zu verwenden.

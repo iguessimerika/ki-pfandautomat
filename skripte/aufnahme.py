@@ -10,13 +10,24 @@ F01 also immer derselbe Gegenstand sein.
 Jede Person hat ein eigenes Protokoll aufnahmeprotokoll_<Kürzel>.csv im Datenordner, damit es im
 gemeinsamen Cloud-Ordner keine Schreibkonflikte gibt. Der Zähler im Bild zählt alle Protokolle zusammen.
 
-Start (Beispiel, aus dem Repo-Ordner):
+EINFACHER MODUS (Standard seit 27.11.2026, siehe ENTSCHEIDUNGEN.md):
+    python skripte/aufnahme.py --klasse dose --person MH --datenordner "<Cloud-Ordner>"
+    - Gegenstand etwa so groß wie der grüne Rahmen in die Bildmitte halten (ca. 25–40 cm).
+    - Das Skript sagt nach jedem Foto, wie der Gegenstand als Nächstes gehalten wird:
+      gerade in der Hand -> schräg/gedreht in der Hand -> ohne Hand. Danach mit n zum nächsten Gegenstand.
+    - Nach ca. 20 Fotos (bei "nichts" nach 5) meldet das Skript "Platz wechseln": Laptop woanders
+      hinstellen oder umdrehen und w drücken.
+    - Oben steht, wie viele Trainingsbilder die Klasse schon hat (Ziel 136, alle Personen zusammen).
+
+Start im alten Serien-Modus (S1–S8, nur noch für Nachträge):
     python skripte/aufnahme.py --klasse dose --serie S3 --person MH
 
 Optionen:
     --klasse       dose | einweg_plastik | bierflasche | mehrweg | kein_pfand | nichts
                    (Logo-Modell: dpg_logo | mehrweg_logo | kein_logo)
-    --serie        S1 ... S8, T (Hauptmodell) bzw. V, LG1 ... LG4, LT (Logo-Modell)
+    --serie        E = einfacher Modus (Standard), T = Testsitzung (auch einfach),
+                   S1 ... S8 alter Serien-Modus; Logo-Modell: V, LG1 ... LG4, LT
+    --ort          optional: kurzer Name für den Platz, z. B. kueche oder klassenzimmer
     --person       ER | KL | SS | MH
     --objekt       Start-Flasche, z. B. F03 (bei "nichts": U03). Standard: F01 bzw. U01
     --kamera       Index der Webcam, Standard 0
@@ -25,8 +36,10 @@ Optionen:
 
 Tasten im Aufnahmefenster:
     Leertaste  Bild speichern
+    w          (einfacher Modus) Platz gewechselt
+    v          (einfacher Modus) Haltung selbst weiterschalten
     n / b      nächste / vorherige Flasche (bzw. Umgebung bei "nichts")
-    h l p a r g   Hintergrund / Licht / Perspektive / Abstand / Ausrichtung / Haltung
+    h l p a r g   (nur Serien-Modus) Hintergrund / Licht / Perspektive / Abstand / Ausrichtung / Haltung
                auf den nächsten für diese Serie erlaubten Wert schalten
     z          letztes Bild dieser Sitzung löschen (Datei und Zeile im eigenen Protokoll)
     q / Esc    beenden
@@ -85,6 +98,7 @@ PLAN_HAUPT = {
            "ausrichtung": ["R1", "R3", "R4"], "haltung": ["G1"]},
     "S8": {"ziel": 16, "ausrichtung": ["R3", "R4"], "haltung": ["G2", "G3"]},
     "T": {"ziel": 24},
+    "E": {"ziel": 136},  # einfacher Modus: Ziel gilt für alle Trainingsbilder der Klasse zusammen
 }
 # Logo-Modell (Drehbuch, Abschnitt 2.4)
 PLAN_LOGO = {
@@ -95,6 +109,21 @@ PLAN_LOGO = {
     "LG4": {"ziel": 20},
     "LT": {"ziel": 30},
 }
+
+# Einfacher Modus (ab 27.11.2026): keine festen Serien mehr, nur drei Haltungen reihum
+EINFACHE_SERIEN = {"E", "T"}
+HALTUNGEN = [  # (Anzeige im Bild, ausrichtung, haltung)
+    ("GERADE in der Hand", "R1", "G1"),
+    ("SCHRAEG oder GEDREHT in der Hand", "R2", "G1"),
+    ("OHNE HAND hinstellen oder hinlegen", "R1", "G3"),
+]
+HALTUNGEN_NICHTS = [  # Klasse "nichts": was ohne Gegenstand zu sehen ist
+    ("NUR HINTERGRUND (niemand im Bild)", "R1", "G3"),
+    ("LEERE HAND ins Bild halten", "R1", "G1"),
+    ("PERSON vor der Kamera, ohne Gegenstand", "R1", "G3"),
+]
+PLATZ_WECHSEL_NACH = {"nichts": 5}  # sonst 20
+ZIELRAHMEN = (0.40, 0.70)  # Breite, Höhe des Rahmens als Anteil des Bildes
 
 PROTOKOLL_SPALTEN = ["dateiname", "klasse", "serie", "objekt", "hintergrund", "licht", "perspektive",
                      "abstand", "ausrichtung", "haltung", "person", "datum", "split"]
@@ -202,7 +231,8 @@ def zaehlen(basis: Path, klasse: str, serie: str, person: str = "", datum: str =
     for protokoll in alle_protokolle(basis):
         with protokoll.open(newline="", encoding="utf-8") as f:
             for z in csv.DictReader(f):
-                if z["klasse"] == klasse and z["serie"] == serie:
+                passt = z["serie"] not in ("T", "LT", "V") if serie == "E" else z["serie"] == serie
+                if z["klasse"] == klasse and passt:
                     gesamt += 1
                     if z["person"] == person and z["datum"] == datum:
                         je_objekt[z["objekt"]] = je_objekt.get(z["objekt"], 0) + 1
@@ -272,6 +302,10 @@ def aufnehmen(args: argparse.Namespace) -> None:
     sitzung: list[Path] = []
     meldung, meldung_farbe = "", (255, 255, 255)
     bild_nr, gesamt, je_objekt = 0, 0, {}
+    einfach = args.serie in EINFACHE_SERIEN and not ist_logo(args.klasse)
+    haltung_nr, platz_nr, am_platz = 0, 1, 0
+    wechsel_nach = PLATZ_WECHSEL_NACH.get(args.klasse, 20)
+    haltungen = HALTUNGEN_NICHTS if args.klasse == "nichts" else HALTUNGEN
 
     kamera = kamera_oeffnen(args.kamera)
     fenster = "Aufnahme Pfandautomat"
@@ -297,10 +331,21 @@ def aufnehmen(args: argparse.Namespace) -> None:
         if ist_logo(args.klasse):
             x, y, b, h = logo_ausschnitt(anzeige)
             cv2.rectangle(anzeige, (x, y), (x + b, y + h), (0, 255, 255), 2)
-        text(anzeige, 0, f"{args.klasse} | Serie {args.serie} | {objekt} | {PERSONEN[args.person]}")
-        text(anzeige, 1, f"Serie: {gesamt}/{plan['ziel']} Bilder | {objekt} heute: {je_objekt.get(objekt, 0)}",
-             (0, 255, 0) if gesamt >= plan["ziel"] else (255, 255, 255))
-        text(anzeige, 2, "  ".join(merkmale.values()))
+        if einfach and args.klasse != "nichts":
+            rb, rh = int(BILD_BREITE * ZIELRAHMEN[0]), int(BILD_HOEHE * ZIELRAHMEN[1])
+            x, y = (BILD_BREITE - rb) // 2, (BILD_HOEHE - rh) // 2 + 20
+            cv2.rectangle(anzeige, (x, y), (x + rb, y + rh), (0, 200, 0), 2)
+        if einfach:
+            ziel_text = "Klasse gesamt" if args.serie == "E" else "Testsitzung"
+            text(anzeige, 0, f"{args.klasse} | {objekt} | {PERSONEN[args.person]} | Platz {platz_nr}")
+            text(anzeige, 1, f"{ziel_text}: {gesamt}/{plan['ziel']} | {objekt} heute: {je_objekt.get(objekt, 0)}"
+                 f" | hier: {am_platz}/{wechsel_nach}", (0, 255, 0) if gesamt >= plan["ziel"] else (255, 255, 255))
+            text(anzeige, 2, f"Jetzt: {haltungen[haltung_nr][0]}", (0, 255, 255))
+        else:
+            text(anzeige, 0, f"{args.klasse} | Serie {args.serie} | {objekt} | {PERSONEN[args.person]}")
+            text(anzeige, 1, f"Serie: {gesamt}/{plan['ziel']} Bilder | {objekt} heute: {je_objekt.get(objekt, 0)}",
+                 (0, 255, 0) if gesamt >= plan["ziel"] else (255, 255, 255))
+            text(anzeige, 2, "  ".join(merkmale.values()))
         text(anzeige, 3, f"Schaerfe {scharf:.0f}" + ("  UNSCHARF" if scharf < SCHAERFE_GRENZE else ""),
              (0, 0, 255) if scharf < SCHAERFE_GRENZE else (255, 255, 255))
         if meldung:
@@ -311,17 +356,33 @@ def aufnehmen(args: argparse.Namespace) -> None:
         if taste in (ord("q"), 27) or cv2.getWindowProperty(fenster, cv2.WND_PROP_VISIBLE) < 1:
             break
         if taste == ord(" "):
+            if einfach:
+                _, ausrichtung, haltung = haltungen[haltung_nr]
+                merkmale = {"hintergrund": args.ort or f"Platz{platz_nr}", "licht": "-", "perspektive": "-",
+                            "abstand": "-", "ausrichtung": ausrichtung, "haltung": haltung}
             pfad = speichern(bild, args.datenordner, args.klasse, args.serie, objekt, args.person, merkmale)
             sitzung.append(pfad)
             bild_nr = 0
             meldung, meldung_farbe = f"Gespeichert: {pfad.name}", (0, 255, 0)
+            if einfach:
+                am_platz += 1
+                haltung_nr = (haltung_nr + 1) % len(haltungen)
+                if haltung_nr == 0 and args.klasse != "nichts":
+                    meldung = "Gespeichert. Naechster Gegenstand: n druecken"
+                if am_platz >= wechsel_nach:
+                    meldung, meldung_farbe = "Bitte PLATZ WECHSELN, danach w druecken", (0, 165, 255)
             if scharf < SCHAERFE_GRENZE:
                 meldung, meldung_farbe = "Gespeichert, aber unscharf: mit z loeschen?", (0, 165, 255)
+        elif taste == ord("w") and einfach:
+            platz_nr, am_platz = platz_nr + 1, 0
+            meldung, meldung_farbe = f"Neuer Platz: Platz {platz_nr}", (0, 255, 0)
+        elif taste == ord("v") and einfach:
+            haltung_nr = (haltung_nr + 1) % len(haltungen)
         elif taste == ord("n"):
             objekt_nr = (objekt_nr + 1) % len(objekte)
         elif taste == ord("b"):
             objekt_nr = (objekt_nr - 1) % len(objekte)
-        elif chr(taste) in MERKMAL_TASTEN:
+        elif chr(taste) in MERKMAL_TASTEN and not einfach:
             m = MERKMAL_TASTEN[chr(taste)]
             werte = plan[m]
             merkmale[m] = werte[(werte.index(merkmale[m]) + 1) % len(werte)]
@@ -331,6 +392,9 @@ def aufnehmen(args: argparse.Namespace) -> None:
                 letzte.unlink(missing_ok=True)
                 protokoll_zeile_entfernen(protokoll, letzte.name)
                 bild_nr = 0
+                if einfach:
+                    haltung_nr = (haltung_nr - 1) % len(haltungen)
+                    am_platz = max(0, am_platz - 1)
                 meldung, meldung_farbe = f"Geloescht: {letzte.name}", (0, 165, 255)
             else:
                 meldung, meldung_farbe = "In dieser Sitzung noch kein Bild gespeichert", (0, 165, 255)
@@ -343,13 +407,18 @@ def aufnehmen(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Webcam-Aufnahme für den Datensatz Pfandautomat")
     parser.add_argument("--klasse", required=True, choices=KLASSEN_HAUPT + KLASSEN_LOGO)
-    parser.add_argument("--serie", required=True, type=str.upper)
+    parser.add_argument("--serie", type=str.upper, help="E (Standard), T, S1–S8 oder Logo-Serie")
+    parser.add_argument("--ort", type=str, default="", help="kurzer Name für den Platz, z. B. kueche")
     parser.add_argument("--person", required=True, type=str.upper, choices=list(PERSONEN))
     parser.add_argument("--objekt", type=str.upper)
     parser.add_argument("--kamera", type=int, default=0)
     parser.add_argument("--datenordner", type=Path,
                         default=Path(__file__).resolve().parent.parent / "daten")
     args = parser.parse_args()
+    if args.serie is None:
+        if ist_logo(args.klasse):
+            parser.error("Für das Logo-Modell bitte --serie angeben (V, LG1 … LG4, LT).")
+        args.serie = "E"
     try:
         plan_fuer(args.klasse, args.serie)
     except ValueError as fehler:
